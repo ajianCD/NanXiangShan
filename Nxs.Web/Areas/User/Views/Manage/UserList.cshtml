@@ -1,0 +1,31 @@
+﻿@using Nxs.Web.Models
+@model Nxs.Model.PageDataModel<TUser>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户列表</title>
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body>
+    <table>
+        @foreach (var item in Model.DataList)
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td>@item.RealName</td>
+                <td>@item.PasswordHash</td>
+            </tr>
+        }
+    </table>
+
+</body>
+</html>

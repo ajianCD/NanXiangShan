@@ -1,0 +1,4 @@
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Release\Nxs.Data.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Release\Nxs.Data.pdb
+E:\MyVS-Project\NanXiangShan\Nxs.Data\obj\Release\Nxs.Data.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Data\obj\Release\Nxs.Data.pdb

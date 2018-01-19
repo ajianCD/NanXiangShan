@@ -1,0 +1,103 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>NanXiangShan 后台管理系统</title>
+    <link href="~/Content/other/bootstrap13.css" rel="stylesheet" />
+    <link href="~/Content/other/theme.css" rel="stylesheet" />
+    <link href="~/Content/font/font-awesome.css" rel="stylesheet" />
+    <script src="~/Scripts/Jquery/jquery.min.js"></script>
+    <!-- Demo page code -->
+
+    <style type="text/css">
+        #line-chart {
+            height: 300px;
+            width: 800px;
+            margin: 0px auto;
+            margin-top: 1em;
+        }
+
+        .brand {
+            font-family: georgia, serif;
+        }
+
+            .brand .first {
+                color: #ccc;
+                font-style: italic;
+            }
+
+            .brand .second {
+                color: #fff;
+                font-weight: bold;
+            }
+    </style>
+    <script src="~/Scripts/BootStrap/bootstrap13.js"></script>
+</head>
+
+
+
+<body>
+    <!--顶部-->
+    <div class="navbar">
+        <div class="navbar-inner" style="min-height: 40px;">
+            <ul class="nav pull-right">
+
+                <li><a href="#" class="visible-tablet visible-desktop" role="button">设置</a></li>
+                <li id="fat-menu" class="dropdown">
+                    <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-user"></i> 张 三
+                        <i class="icon-caret-down"></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a tabindex="-1" href="#">  账号信息</a></li>
+                        <li class="divider"></li>
+                        <li><a tabindex="-1" class="visible-phone" href="#">Settings</a></li>
+                        <li class="divider visible-phone"></li>
+                        <li><a tabindex="-1" href="/Admin/Login">注销</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            <a class="brand" href="/Admin/Main"><span class="first">楠香山</span> <span class="second">NanXiangShan</span></a>
+        </div>
+    </div>
+
+    <!--导航-->
+    <div class="sidebar-nav">
+        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>系统用户管理<span class="label label-info" title="新注册用户">+3</span></a>
+        <ul id="dashboard-menu" class="nav nav-list collapse in">
+            <li><a href="#">用户管理</a></li>
+            <li><a href="#">角色管理</a></li>
+        </ul>
+
+        <a href="#sysIndex-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>首页模块<i class="icon-chevron-up"></i></a>
+        <ul id="sysIndex-menu" class="nav nav-list collapse">
+            <li><a href="#">小区简介</a></li>
+            <li><a href="#">新闻动态</a></li>
+            <li><a href="#">小区美景</a></li>
+            <li><a href="#">意见反馈</a></li>
+        </ul>
+        <a href="#sys-menu" class="nav-header" data-toggle="collapse"><i class="icon-legal"></i>系统配置<i class="icon-chevron-up"></i></a>
+        <ul id="sys-menu" class="nav nav-list collapse">
+            <li><a href="#">菜单管理</a></li>
+            <li><a href="#">码表管理</a></li>
+        </ul>
+        @*<a href="#" class="nav-header"><i class="icon-question-sign"></i></a>
+            <a href="#" class="nav-header"><i class="icon-comment"></i>菜单6  </a>*@
+    </div>
+
+
+    <div class="content">
+        <ul class="breadcrumb">
+            <li><a href="/Admin/Main/">系统用户管理</a> <span class="divider">/</span></li>
+            <li class="active">用户管理</li>
+        </ul>
+    </div>
+</body>
+</html>

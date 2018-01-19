@@ -1,0 +1,5 @@
+E:\MyVS-Project\NanXiangShan\Nxs.Model\bin\Debug\Nxs.Model.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Model\bin\Debug\Nxs.Model.pdb
+E:\MyVS-Project\NanXiangShan\Nxs.Model\obj\Debug\Nxs.Model.csprojResolveAssemblyReference.cache
+E:\MyVS-Project\NanXiangShan\Nxs.Model\obj\Debug\Nxs.Model.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Model\obj\Debug\Nxs.Model.pdb
