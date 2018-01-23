@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -180,6 +181,7 @@
     <Content Include="Scripts\SysFront\wow.js" />
     <Content Include="Web.config" />
     <Content Include="Views\ValidationCode\CreatImage.cshtml" />
+    <Content Include="资料\Identity相关资料\ASP.NET_Identity教程（中-英）.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\IdentityConfig.cs" />

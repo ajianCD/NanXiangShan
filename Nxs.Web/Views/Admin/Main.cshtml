@@ -1,7 +1,6 @@
 ﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
 
 <html>
@@ -37,6 +36,13 @@
             }
     </style>
     <script src="~/Scripts/BootStrap/bootstrap13.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".sidebar-nav a").click(function () {
+                console.log($(this).attr("toaction"));
+            });
+        });
+    </script>
 </head>
 
 
@@ -72,13 +78,13 @@
     <div class="sidebar-nav">
         <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>系统用户管理<span class="label label-info" title="新注册用户">+3</span></a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
-            <li><a href="#">用户管理</a></li>
-            <li><a href="#">角色管理</a></li>
+            <li><a toaction="用户管理">用户管理</a></li>
+            <li><a toaction="角色管理">角色管理</a></li>
         </ul>
 
         <a href="#sysIndex-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>首页模块<i class="icon-chevron-up"></i></a>
         <ul id="sysIndex-menu" class="nav nav-list collapse">
-            <li><a href="#">小区简介</a></li>
+            <li><a href="#" toaction="aaa">小区简介</a></li>
             <li><a href="#">新闻动态</a></li>
             <li><a href="#">小区美景</a></li>
             <li><a href="#">意见反馈</a></li>
