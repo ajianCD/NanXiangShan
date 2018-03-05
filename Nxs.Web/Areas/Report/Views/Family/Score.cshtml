@@ -1,0 +1,120 @@
+﻿@{
+    Layout = null;
+}
+
+<style type="text/css">
+    .panel.panel-violet > .panel-heading {
+        color: #FFFFFF;
+        background: #9351ad;
+        border-color: #9351ad !important;
+    }
+
+    .panel.panel-violet {
+        border-color: #9351ad;
+    }
+</style>
+
+<div class="panel panel-violet" style="margin-left:10px;margin-right:70px;">
+    <div class="panel-heading">
+        家务及分数新增或编辑
+    </div>
+    <div class="panel-body pan">
+        <form action="#">
+            <div class="form-body pal">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <div class="input-icon right">
+                                <i class="fa fa-user"></i>
+                                <input id="hwName" type="text" placeholder="请输入家务名称" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <select class="form-control" id="hwScores">
+                                <option value="-1">请选择家务得分</option>
+                                <option value="1">1 分</option>
+                                <option value="2">2 分</option>
+                                <option value="3">3 分</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <button type="button" class="btn btn-primary" onclick="AddScore()">
+                            提交
+                        </button>
+                    </div>
+                </div>
+                <hr />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="container" style="margin-left:10px; margin-top:10px; ">
+    <div class="row">
+        <div class="col-xs-6 col-sm-4">
+            <div class="panel panel-danger">
+                <div class="panel-heading">1 points of housework</div>
+
+                <a href="#" class="list-group-item"> 扔垃圾/次</a>
+                <a href="#" class="list-group-item">Morbi leo risus</a>
+                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item">Vestibulum at eros</a>
+
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">2 points of housework</div>
+                <a href="#" class="list-group-item">拖地/房</a>
+                <a href="#" class="list-group-item">Morbi leo risus</a>
+                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                <a href="#" class="list-group-item">Vestibulum at eros</a>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+            <div class="panel panel-success">
+                <div class="panel-heading">3 points of housework</div>
+                <div class="panel-body">
+                    <a href="#" class="list-group-item">大扫除/h</a>
+                    <a href="#" class="list-group-item">做早饭/h</a>
+                    <a href="#" class="list-group-item">做饭/次</a>
+                    <a href="#" class="list-group-item">收拾衣柜/个</a>
+                    <a href="#" class="list-group-item">收拾客厅/次</a>
+                    <a href="#" class="list-group-item">收拾卧室/间</a>
+                    <a href="#" class="list-group-item">洗厕所/次</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+
+    /**
+     * 新增（编辑）家务及分数
+     */
+    function AddScore() {
+        $.ajax({
+            url: '/Report/Family/AddScore',
+            type: 'POST',
+            async: false,
+            data: { hwName: $("#hwName").val(), hwScore: $("#hwScores").val(), Id: '', rand: Math.random() },
+            beforeSend: function (XMLHttpRequest) {
+
+            },
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (xhr) {
+            }
+        });
+    }
+
+</script>

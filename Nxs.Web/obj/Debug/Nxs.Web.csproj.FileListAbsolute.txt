@@ -123,3 +123,9 @@ E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\obj\Debug\Nxs.Web.csprojResolveA
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\obj\Debug\Nxs.Web.csproj.CoreCompileInputs.cache
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\obj\Debug\Nxs.Web.dll
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\obj\Debug\Nxs.Web.pdb
+E:\MyVS-Project\NanXiangShan\Nxs.Web\bin\Business.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Web\bin\Nxs.Data.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Web\bin\Business.pdb
+E:\MyVS-Project\NanXiangShan\Nxs.Web\bin\Nxs.Data.pdb
+E:\MyVS-Project\NanXiangShan\Nxs.Web\bin\Nxs.Data.dll.config
+E:\MyVS-Project\NanXiangShan\Nxs.Web\obj\Debug\Nxs.Web.csproj.CoreCompileInputs.cache

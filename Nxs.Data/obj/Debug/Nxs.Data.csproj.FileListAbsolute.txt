@@ -1,0 +1,10 @@
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Data.dll.config
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Data.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Data.pdb
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Debug\EntityFramework.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Debug\EntityFramework.xml
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\MyVS-Project\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.csproj.CoreCompileInputs.cache
+E:\MyVS-Project\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.pdb

@@ -261,6 +261,7 @@
     <Compile Include="Infrastructure\AppRoleManager.cs" />
     <Compile Include="Infrastructure\AppUserManager.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\OperateResult.cs" />
     <Compile Include="Models\TRole.cs" />
     <Compile Include="Models\TUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -303,6 +304,14 @@
     <Folder Include="资料\Dom\stylesheets\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Business\Nxs.Business.csproj">
+      <Project>{c4d94eaf-b660-420a-b59c-a3fd2bd42887}</Project>
+      <Name>Nxs.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nxs.Data\Nxs.Data.csproj">
+      <Project>{259c64ea-c40d-4043-b8ed-95fe77e35799}</Project>
+      <Name>Nxs.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Nxs.Model\Nxs.Model.csproj">
       <Project>{28d50a5a-9e50-4bde-901e-c46cf5a8c927}</Project>
       <Name>Nxs.Model</Name>

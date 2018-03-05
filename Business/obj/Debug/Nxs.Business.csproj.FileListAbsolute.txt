@@ -1,0 +1,13 @@
+E:\MyVS-Project\NanXiangShan\Business\bin\Debug\Business.dll
+E:\MyVS-Project\NanXiangShan\Business\bin\Debug\Business.pdb
+E:\MyVS-Project\NanXiangShan\Business\bin\Debug\Nxs.Data.dll
+E:\MyVS-Project\NanXiangShan\Business\bin\Debug\Nxs.Model.dll
+E:\MyVS-Project\NanXiangShan\Business\bin\Debug\EntityFramework.dll
+E:\MyVS-Project\NanXiangShan\Business\bin\Debug\Nxs.Data.pdb
+E:\MyVS-Project\NanXiangShan\Business\bin\Debug\Nxs.Data.dll.config
+E:\MyVS-Project\NanXiangShan\Business\bin\Debug\Nxs.Model.pdb
+E:\MyVS-Project\NanXiangShan\Business\bin\Debug\EntityFramework.xml
+E:\MyVS-Project\NanXiangShan\Business\obj\Debug\Nxs.Business.csprojResolveAssemblyReference.cache
+E:\MyVS-Project\NanXiangShan\Business\obj\Debug\Nxs.Business.csproj.CoreCompileInputs.cache
+E:\MyVS-Project\NanXiangShan\Business\obj\Debug\Business.dll
+E:\MyVS-Project\NanXiangShan\Business\obj\Debug\Business.pdb
