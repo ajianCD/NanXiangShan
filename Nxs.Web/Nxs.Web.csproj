@@ -130,6 +130,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.css" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap-3.3.7-dist\js\bootstrap.js" />
+    <Content Include="Content\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-3.3.7-dist\js\npm.js" />
+    <Content Include="Content\layer\extend\layer.ext.js" />
+    <Content Include="Content\layer\layer.js" />
+    <Content Include="Content\layer\skin\default\icon-ext.png" />
+    <Content Include="Content\layer\skin\default\icon.png" />
+    <Content Include="Content\layer\skin\default\loading-0.gif" />
+    <Content Include="Content\layer\skin\default\loading-1.gif" />
+    <Content Include="Content\layer\skin\default\loading-2.gif" />
+    <Content Include="Content\layer\skin\layer.css" />
+    <Content Include="Content\layer\skin\layer.ext.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\bootstranp\bootstrap.css" />
     <Content Include="Content\bootstranp\bootstrap.min.css" />
@@ -164,6 +181,18 @@
     <Content Include="Config\AppSettings.config" />
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\User\Views\Manage\UserList.cshtml" />
+    <Content Include="Areas\User\Views\Manage\Add.cshtml" />
+    <Content Include="Areas\User\Views\Manage\Edit.cshtml" />
+    <Content Include="Areas\Report\Views\web.config" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Report\Views\Family\Score.cshtml" />
     <None Include="Scripts\Jquery\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Jquery\jquery-1.10.2.js" />
     <Content Include="Scripts\Jquery\jquery-1.10.2.min.js" />
@@ -181,14 +210,48 @@
     <Content Include="Scripts\SysFront\wow.js" />
     <Content Include="Web.config" />
     <Content Include="Views\ValidationCode\CreatImage.cshtml" />
+    <Content Include="资料\Dom\calendar.html" />
+    <Content Include="资料\Dom\faq.html" />
+    <Content Include="资料\Dom\help.html" />
+    <Content Include="资料\Dom\index.html" />
+    <Content Include="资料\Dom\media.html" />
+    <Content Include="资料\Dom\premium-blog-item.html" />
+    <Content Include="资料\Dom\premium-blog.html" />
+    <Content Include="资料\Dom\premium-build.html" />
+    <Content Include="资料\Dom\premium-colors.html" />
+    <Content Include="资料\Dom\premium-invoice.html" />
+    <Content Include="资料\Dom\premium-media.html" />
+    <Content Include="资料\Dom\premium-pricing-tables.html" />
+    <Content Include="资料\Dom\premium-profile.html" />
+    <Content Include="资料\Dom\premium-search-results.html" />
+    <Content Include="资料\Dom\premium-timeline.html" />
+    <Content Include="资料\Dom\premium-upgrade-account.html" />
+    <Content Include="资料\Dom\premium-users.html" />
+    <Content Include="资料\Dom\premium-widgets.html" />
+    <Content Include="资料\Dom\privacy-policy.html" />
+    <Content Include="资料\Dom\reset-password.html" />
+    <Content Include="资料\Dom\sign-in.html" />
+    <Content Include="资料\Dom\sign-up.html" />
+    <Content Include="资料\Dom\terms-and-conditions.html" />
+    <Content Include="资料\Dom\user.html" />
+    <Content Include="资料\Dom\users.html" />
+    <Content Include="资料\Dom\说明.txt" />
+    <Content Include="资料\git操作\2.获取更新git.txt" />
     <Content Include="资料\Identity相关资料\ASP.NET_Identity教程（中-英）.pdf" />
+    <Content Include="资料\Dom\找网站模板就上【模板之家】cssMoban.com.url" />
+    <Content Include="资料\Identity相关资料\cpts_649_bpo.zip" />
+    <Content Include="资料\Identity相关资料\egpp_8_edmin.zip" />
+    <Content Include="资料\Identity相关资料\sbtp_42_ob.zip" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Report\Controllers\FamilyController.cs" />
+    <Compile Include="Areas\Report\ReportAreaRegistration.cs" />
     <Compile Include="Areas\User\Controllers\ManageController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\FamilyReportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValidationCodeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -218,6 +281,7 @@
     <Content Include="Scripts\Jquery\jquery-1.10.2.min.map" />
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\Main.cshtml" />
+    <Content Include="Views\Admin\Family.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -227,10 +291,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Report\Models\" />
+    <Folder Include="Areas\Report\Views\Shared\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />
     <Folder Include="Scripts\Layer\extend\" />
     <Folder Include="Scripts\Layer\skin\" />
+    <Folder Include="Views\FamilyReport\" />
+    <Folder Include="资料\Dom\images\" />
+    <Folder Include="资料\Dom\lib\" />
+    <Folder Include="资料\Dom\stylesheets\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nxs.Model\Nxs.Model.csproj">

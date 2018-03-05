@@ -18,10 +18,33 @@ namespace Nxs.Web.Areas.User.Controllers
             return View();
         }
 
-
-        public ActionResult Create()
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Add()
         {
             return View();
+        }
+
+        /// <summary>
+        /// 编辑
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public ActionResult Edit(string id)
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public JsonResult Delete(string id)
+        {
+            return Json(new { });
         }
 
         /// <summary>
@@ -30,9 +53,10 @@ namespace Nxs.Web.Areas.User.Controllers
         /// <param name="currentPage"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
+        [HttpPost]
         public ActionResult UserList(int currentPage, int pageSize)
         {
-            var users = UserManager.Users.Skip(currentPage).Take(pageSize).ToList();
+            var users = UserManager.Users.ToList().Skip(currentPage).Take(pageSize).ToList();
             PageDataModel<TUser> dataList = new PageDataModel<TUser>();
             dataList.DataList = users;
             dataList.PageNum = currentPage;

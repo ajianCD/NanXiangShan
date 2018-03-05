@@ -69,6 +69,11 @@ namespace Nxs.Web.Controllers
             return View();
         }
 
+        public ActionResult Family()
+        {
+            return View();
+        }
+
 
         private AppUserManager UserManager
         {

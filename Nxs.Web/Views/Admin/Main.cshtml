@@ -11,6 +11,8 @@
     <link href="~/Content/other/theme.css" rel="stylesheet" />
     <link href="~/Content/font/font-awesome.css" rel="stylesheet" />
     <script src="~/Scripts/Jquery/jquery.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <link href="~/Content/layer/skin/layer.css" rel="stylesheet" />
     <!-- Demo page code -->
 
     <style type="text/css">
@@ -39,7 +41,28 @@
     <script type="text/javascript">
         $(function () {
             $(".sidebar-nav a").click(function () {
-                console.log($(this).attr("toaction"));
+                var vpath = $(this).attr("tohref");
+                debugger;
+                //var loadindex = layer.load(0, { shade: [0.3, '#fff'] });
+                $("#main").load(vpath, { currentPage: 1, pageSize: 10 }, function () {
+                    layer.close(loadindex);
+                });
+                var loadindex;
+                $.ajax({
+                    url: vpath,
+                    type: 'POST',
+                    async: false,
+                    data: { currentPage: 0, pageSize: 10 },
+                    beforeSend: function (XMLHttpRequest) {
+                         loadindex = layer.load(0, { shade: [0.3, '#fff'] });
+                    },
+                    success: function (data) {
+                        layer.close(loadindex);
+                        $(".divContent").html(data);
+                    },
+                    error: function (xhr) {
+                    }
+                });
             });
         });
     </script>
@@ -78,13 +101,15 @@
     <div class="sidebar-nav">
         <a href="#dashboard-menu" class="nav-header" data-toggle="collapse"><i class="icon-dashboard"></i>系统用户管理<span class="label label-info" title="新注册用户">+3</span></a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
-            <li><a toaction="用户管理">用户管理</a></li>
-            <li><a toaction="角色管理">角色管理</a></li>
+            <li><a tohref="新增角色"><span class="fa fa-caret-right"></span> 新增角色</a></li>
+            <li><a tohref="角色列表"><span class="fa fa-caret-right"></span> 角色列表</a></li>
+            <li><a tohref="新增用户"><span class="fa fa-caret-right"></span> 新增用户</a></li>
+            <li class="active"><a tohref="/User/Manage/UserList"><span class="fa fa-caret-right"></span> 用户列表</a></li>
         </ul>
 
         <a href="#sysIndex-menu" class="nav-header" data-toggle="collapse"><i class="icon-briefcase"></i>首页模块<i class="icon-chevron-up"></i></a>
         <ul id="sysIndex-menu" class="nav nav-list collapse">
-            <li><a href="#" toaction="aaa">小区简介</a></li>
+            <li><a href="#" tohref="aaa">小区简介</a></li>
             <li><a href="#">新闻动态</a></li>
             <li><a href="#">小区美景</a></li>
             <li><a href="#">意见反馈</a></li>
@@ -104,6 +129,9 @@
             <li><a href="/Admin/Main/">系统用户管理</a> <span class="divider">/</span></li>
             <li class="active">用户管理</li>
         </ul>
+        <div class="divContent">
+            hah
+        </div>
     </div>
 </body>
 </html>
