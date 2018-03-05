@@ -16,9 +16,9 @@ namespace Business.Family
             hwDal = new HouseWork();
         }
 
-        public List<HouseWorkScore> Get()
+        public List<HouseWorkScore> Get(int score)
         {
-            return hwDal.Get();
+            return hwDal.Get(score);
         }
 
         public int Add(HouseWorkScore hw)

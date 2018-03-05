@@ -1,4 +1,5 @@
 ﻿using Business.Family;
+using Newtonsoft.Json;
 using Nxs.Data;
 using Nxs.Web.Models;
 using System;
@@ -41,9 +42,21 @@ namespace Nxs.Web.Areas.Report.Controllers
             var rst = _hwBusiness.Add(hw);
             if (rst > 0)
             {
-                return Json(new OperateResult { Success=true, Message="请求成功" });
+                return Json(new OperateResult { Success = true, Message = "请求成功" });
             }
-            return Json(new OperateResult { Success=false,Message="请求操作失败，请联系管理员！"});
+            return Json(new OperateResult { Success = false, Message = "请求操作失败，请联系管理员！" });
+        }
+
+        /// <summary>
+        /// 获取家务得分分类
+        /// </summary>
+        /// <param name="score"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult GetHwScore(int score)
+        {
+            var rst = _hwBusiness.Get(score);
+            return Json(new OperateResult { Success=true,Message="ok",Data= rst });
         }
     }
 }

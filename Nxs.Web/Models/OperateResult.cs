@@ -23,6 +23,6 @@ namespace Nxs.Web.Models
         /// <summary>
         /// 相关数据
         /// </summary>
-        public string Data { get; set; }
+        public dynamic Data { get; set; }
     }
 }

@@ -85,6 +85,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -237,6 +240,7 @@
     <Content Include="资料\Dom\users.html" />
     <Content Include="资料\Dom\说明.txt" />
     <Content Include="资料\git操作\2.获取更新git.txt" />
+    <Content Include="资料\git操作\1.git提交项目.txt" />
     <Content Include="资料\Identity相关资料\ASP.NET_Identity教程（中-英）.pdf" />
     <Content Include="资料\Dom\找网站模板就上【模板之家】cssMoban.com.url" />
     <Content Include="资料\Identity相关资料\cpts_649_bpo.zip" />

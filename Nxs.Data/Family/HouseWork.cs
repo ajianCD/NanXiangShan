@@ -12,11 +12,16 @@ namespace Nxs.Data.Family
         /// 获取所有有效的家务
         /// </summary>
         /// <returns></returns>
-        public List<HouseWorkScore> Get()
+        public List<HouseWorkScore> Get(int score)
         {
             using (DefaultConnection _ctx = new DefaultConnection())
             {
-                return _ctx.HouseWorkScore.Where(item => item.hwState != 0).ToList();
+                List<HouseWorkScore> list = new List<HouseWorkScore>();
+                if (score != -1)
+                    list = _ctx.HouseWorkScore.Where(item => item.hwState != 0 && item.hwScore == score).ToList();
+                else
+                    list = _ctx.HouseWorkScore.Where(item => item.hwState != 0).ToList();
+                return list;
             }
         }
 
