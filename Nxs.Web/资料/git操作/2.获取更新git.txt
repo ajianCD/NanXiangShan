@@ -6,4 +6,4 @@
 
 4.git merge temp  --合并temp分支到本地的master分支
 
-5.git branch -d temp  --删除temp分支
+5.git branch -d（D） temp  --删除temp分支

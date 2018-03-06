@@ -129,3 +129,12 @@ E:\MyVS-Project\NanXiangShan\Nxs.Web\bin\Business.pdb
 E:\MyVS-Project\NanXiangShan\Nxs.Web\bin\Nxs.Data.pdb
 E:\MyVS-Project\NanXiangShan\Nxs.Web\bin\Nxs.Data.dll.config
 E:\MyVS-Project\NanXiangShan\Nxs.Web\obj\Debug\Nxs.Web.csproj.CoreCompileInputs.cache
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\bin\Business.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\bin\Nxs.Data.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\bin\Business.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\bin\Nxs.Data.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\bin\Nxs.Data.dll.config
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\bin\Newtonsoft.Json.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\bin\Newtonsoft.Json.xml
+E:\MyVS-Project\NanXiangShan\Nxs.Web\bin\Newtonsoft.Json.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Web\bin\Newtonsoft.Json.xml

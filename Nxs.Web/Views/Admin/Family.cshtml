@@ -42,8 +42,8 @@
         <a href="#dashboard-menu" class="nav-header" data-toggle="collapse" name="日报" toDefault=""><i class="icon-dashboard"></i>日报</a>
         <ul id="dashboard-menu" class="nav nav-list collapse in">
             <li><a tohref="/Report/Family/Score" name="家务得分标准"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;&nbsp;家务得分标准</a></li>
-            <li><a tohref="家务得分标准" name="日报统计"><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span>&nbsp;&nbsp;日报统计</a></li>
-            <li><a tohref="家务得分标准" name="日报详细"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;&nbsp;日报详细</a></li>
+            <li><a tohref="/Report/DayTotal" name="日报统计"><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span>&nbsp;&nbsp;日报统计</a></li>
+            <li><a tohref="/Report/DayDetail" name="日报详细"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;&nbsp;日报详细</a></li>
         </ul>
         <a href="/Admin/Login" class="nav-header"><i class="icon-comment"></i>退出登录</a>
     </div>
@@ -51,11 +51,11 @@
 
     <div class="content">
         <ul class="breadcrumb">
-            <li><a href="/Admin/Family/" id="contentFirst">日报</a> <span class="divider"></span></li>
-            <li class="active" id="contentSecond">日报详细</li>
+            <li><a href="/Admin/Family/" id="contentFirst">后台管理</a> <span class="divider"></span></li>
+            <li class="active" id="contentSecond">系统主页</li>
         </ul>
         <div class="divContent">
-            hah
+            <h2 style="margin-left:10px; color:darkgray">该系统主要用户家庭总结，第一个版本功能：家务得分标准，日报统计，日报详细。</h2>
         </div>
     </div>
 </body>
@@ -73,8 +73,6 @@
             } else {
                 $("#contentSecond").html($(this).attr("name"));
             }
-            console.log(vpath);
-            //var loadindex = layer.load(0, { shade: [0.3, '#fff'] });
             $("#main").load(vpath, { currentPage: 1, pageSize: 10 }, function () {
                 layer.close(loadindex);
             });

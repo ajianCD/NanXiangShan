@@ -11,3 +11,16 @@ E:\MyVS-Project\NanXiangShan\Business\obj\Debug\Nxs.Business.csprojResolveAssemb
 E:\MyVS-Project\NanXiangShan\Business\obj\Debug\Nxs.Business.csproj.CoreCompileInputs.cache
 E:\MyVS-Project\NanXiangShan\Business\obj\Debug\Business.dll
 E:\MyVS-Project\NanXiangShan\Business\obj\Debug\Business.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Debug\Business.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Debug\Business.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Debug\Nxs.Data.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Debug\Nxs.Model.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Debug\EntityFramework.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Debug\Nxs.Data.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Debug\Nxs.Data.dll.config
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Debug\Nxs.Model.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Debug\EntityFramework.xml
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\obj\Debug\Nxs.Business.csprojResolveAssemblyReference.cache
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\obj\Debug\Nxs.Business.csproj.CoreCompileInputs.cache
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\obj\Debug\Business.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\obj\Debug\Business.pdb
