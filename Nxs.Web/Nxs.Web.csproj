@@ -133,11 +133,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.css" />
     <Content Include="Content\bootstrap-3.3.7-dist\css\bootstrap.min.css" />
     <Content Include="Content\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap-3.3.7-dist\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Content\bootstrap-3.3.7-dist\js\bootstrap-datetimepicker.zh-CN.js" />
     <Content Include="Content\bootstrap-3.3.7-dist\js\bootstrap.js" />
     <Content Include="Content\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap-3.3.7-dist\js\npm.js" />
@@ -243,6 +246,7 @@
     <Content Include="资料\Dom\说明.txt" />
     <Content Include="资料\git操作\2.获取更新git.txt" />
     <Content Include="资料\git操作\1.git提交项目.txt" />
+    <Content Include="资料\git操作\3.有用的操作.txt" />
     <Content Include="资料\Identity相关资料\ASP.NET_Identity教程（中-英）.pdf" />
     <Content Include="资料\Dom\找网站模板就上【模板之家】cssMoban.com.url" />
     <Content Include="资料\Identity相关资料\cpts_649_bpo.zip" />
@@ -259,6 +263,7 @@
     <Compile Include="Areas\User\Controllers\ManageController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ComponentController.cs" />
     <Compile Include="Controllers\FamilyReportController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValidationCodeController.cs" />
@@ -291,6 +296,7 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Admin\Main.cshtml" />
     <Content Include="Views\Admin\Family.cshtml" />
+    <Content Include="Views\Component\Radio_YLZC.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
