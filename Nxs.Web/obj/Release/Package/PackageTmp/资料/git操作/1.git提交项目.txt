@@ -1,0 +1,5 @@
+git status是哪些文件有所修改
+git diff 可以查询所修改的代码
+git add -A 增加自己所做的修改
+git commit -m'' 提交所有修改的代码
+git push origin master 提交代码

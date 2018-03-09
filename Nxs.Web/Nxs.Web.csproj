@@ -201,6 +201,7 @@
     <Content Include="Areas\Report\Views\Family\Score.cshtml" />
     <Content Include="Areas\Report\Views\DayTotal\Index.cshtml" />
     <Content Include="Areas\Report\Views\DayDetail\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\Jquery\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Jquery\jquery-1.10.2.js" />
     <Content Include="Scripts\Jquery\jquery-1.10.2.min.js" />

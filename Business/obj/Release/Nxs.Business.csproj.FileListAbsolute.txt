@@ -2,10 +2,12 @@ E:\MyVS-Project\NanXiangShan\Business\bin\Release\Business.dll
 E:\MyVS-Project\NanXiangShan\Business\bin\Release\Business.pdb
 E:\MyVS-Project\NanXiangShan\Business\bin\Release\Nxs.Data.dll
 E:\MyVS-Project\NanXiangShan\Business\bin\Release\Nxs.Model.dll
-E:\MyVS-Project\NanXiangShan\Business\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
 E:\MyVS-Project\NanXiangShan\Business\bin\Release\Nxs.Data.pdb
 E:\MyVS-Project\NanXiangShan\Business\bin\Release\Nxs.Model.pdb
-E:\MyVS-Project\NanXiangShan\Business\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
 E:\MyVS-Project\NanXiangShan\Business\obj\Release\Nxs.Business.csprojResolveAssemblyReference.cache
 E:\MyVS-Project\NanXiangShan\Business\obj\Release\Business.dll
 E:\MyVS-Project\NanXiangShan\Business\obj\Release\Business.pdb
+E:\MyVS-Project\NanXiangShan\Business\bin\Release\EntityFramework.dll
+E:\MyVS-Project\NanXiangShan\Business\bin\Release\Nxs.Data.dll.config
+E:\MyVS-Project\NanXiangShan\Business\bin\Release\EntityFramework.xml
+E:\MyVS-Project\NanXiangShan\Business\obj\Release\Nxs.Business.csproj.CoreCompileInputs.cache

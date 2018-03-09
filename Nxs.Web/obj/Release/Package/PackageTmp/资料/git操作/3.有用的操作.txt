@@ -1,0 +1,17 @@
+1.git remote 查看所有远程仓库
+
+2.git remote -v 查看所有远程仓库详细
+
+3.git remote rm origin 删除远程仓库
+
+4.git remote add origin+地址 新增远程仓库地址
+
+5.git remote set-url origin +地址 直接设置远程仓库地址
+
+6.git checkout . #本地所有修改的。没有的提交的，都返回到原来的状态
+
+7.git stash #把所有没有提交的修改暂存到stash里面。可用git stash pop回复。
+
+8.git reset --hard HASH #返回到某个节点，不保留修改。
+
+9.git reset --soft HASH #返回到某个节点。保留修改
