@@ -68,6 +68,41 @@
     <Property Name="AccessFailedCount" Type="int" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
   </EntityType>
+  <EntityType Name="DayReport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkDoneSituation" Type="int" />
+    <Property Name="WorkAttitude" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkEnergy" Type="int" Nullable="false" />
+    <Property Name="WorkTime" Type="int" Nullable="false" />
+    <Property Name="PersonalResult" Type="nvarchar" MaxLength="200" />
+    <Property Name="PersonalQuestion" Type="nvarchar" MaxLength="200" />
+    <Property Name="PersonalSuggest" Type="nvarchar" MaxLength="200" />
+    <Property Name="PersonalIsUseful" Type="nvarchar" MaxLength="50" />
+    <Property Name="Communication" Type="nvarchar" MaxLength="200" />
+    <Property Name="ThingOfUseful" Type="nvarchar" MaxLength="200" />
+    <Property Name="CircleOfFriend" Type="nvarchar" MaxLength="200" />
+    <Property Name="Chanllenge" Type="nvarchar" MaxLength="200" />
+    <Property Name="Movement" Type="nvarchar" MaxLength="200" />
+    <Property Name="Expand" Type="nvarchar" MaxLength="200" />
+    <Property Name="FamilyCommunication" Type="nvarchar" MaxLength="200" />
+    <Property Name="HouseScores" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DayReportTime" Type="datetime" Nullable="false" />
+    <Property Name="WorkGetScore" Type="int" />
+    <Property Name="WorkRemark" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DayReportUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DayReportId" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
   <EntityType Name="HouseWorkScore">
     <Key>
       <PropertyRef Name="Id" />
@@ -77,6 +112,18 @@
     <Property Name="hwScore" Type="int" Nullable="false" />
     <Property Name="hwState" Type="int" Nullable="false" />
   </EntityType>
+  <Association Name="FK_DayReportUser_HouseWorkScore">
+    <End Role="HouseWorkScore" Type="Self.HouseWorkScore" Multiplicity="1" />
+    <End Role="DayReportUser" Type="Self.DayReportUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HouseWorkScore">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DayReportUser">
+        <PropertyRef Name="DayReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -140,7 +187,13 @@
     <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DayReport" EntityType="Self.DayReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DayReportUser" EntityType="Self.DayReportUser" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HouseWorkScore" EntityType="Self.HouseWorkScore" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DayReportUser_HouseWorkScore" Association="Self.FK_DayReportUser_HouseWorkScore">
+      <End Role="HouseWorkScore" EntitySet="HouseWorkScore" />
+      <End Role="DayReportUser" EntitySet="DayReportUser" />
+    </AssociationSet>
     <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />

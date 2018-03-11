@@ -81,5 +81,42 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="DayReport">
+      <EntityTypeMapping TypeName="NxsDbModel.DayReport">
+        <MappingFragment StoreEntitySet="DayReport">
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="WorkRemark" ColumnName="WorkRemark" />
+          <ScalarProperty Name="WorkGetScore" ColumnName="WorkGetScore" />
+          <ScalarProperty Name="DayReportTime" ColumnName="DayReportTime" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="HouseScores" ColumnName="HouseScores" />
+          <ScalarProperty Name="FamilyCommunication" ColumnName="FamilyCommunication" />
+          <ScalarProperty Name="Expand" ColumnName="Expand" />
+          <ScalarProperty Name="Movement" ColumnName="Movement" />
+          <ScalarProperty Name="Chanllenge" ColumnName="Chanllenge" />
+          <ScalarProperty Name="CircleOfFriend" ColumnName="CircleOfFriend" />
+          <ScalarProperty Name="ThingOfUseful" ColumnName="ThingOfUseful" />
+          <ScalarProperty Name="Communication" ColumnName="Communication" />
+          <ScalarProperty Name="PersonalIsUseful" ColumnName="PersonalIsUseful" />
+          <ScalarProperty Name="PersonalSuggest" ColumnName="PersonalSuggest" />
+          <ScalarProperty Name="PersonalQuestion" ColumnName="PersonalQuestion" />
+          <ScalarProperty Name="PersonalResult" ColumnName="PersonalResult" />
+          <ScalarProperty Name="WorkTime" ColumnName="WorkTime" />
+          <ScalarProperty Name="WorkEnergy" ColumnName="WorkEnergy" />
+          <ScalarProperty Name="WorkAttitude" ColumnName="WorkAttitude" />
+          <ScalarProperty Name="WorkDoneSituation" ColumnName="WorkDoneSituation" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DayReportUser">
+      <EntityTypeMapping TypeName="NxsDbModel.DayReportUser">
+        <MappingFragment StoreEntitySet="DayReportUser">
+          <ScalarProperty Name="DayReportId" ColumnName="DayReportId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -4,3 +4,9 @@ E:\MyVS-Project\NanXiangShan\Nxs.Model\obj\Release\Nxs.Model.dll
 E:\MyVS-Project\NanXiangShan\Nxs.Model\obj\Release\Nxs.Model.pdb
 E:\MyVS-Project\NanXiangShan\Nxs.Model\obj\Release\Nxs.Model.csprojResolveAssemblyReference.cache
 E:\MyVS-Project\NanXiangShan\Nxs.Model\obj\Release\Nxs.Model.csproj.CoreCompileInputs.cache
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Model\bin\Release\Nxs.Model.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Model\bin\Release\Nxs.Model.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Model\obj\Release\Nxs.Model.csproj.CoreCompileInputs.cache
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Model\obj\Release\Nxs.Model.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Model\obj\Release\Nxs.Model.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Model\obj\Release\Nxs.Model.csprojResolveAssemblyReference.cache

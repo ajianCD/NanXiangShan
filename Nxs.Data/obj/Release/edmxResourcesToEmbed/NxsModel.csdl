@@ -117,6 +117,12 @@
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
     </AssociationSet>
     <EntitySet Name="HouseWorkScore" EntityType="NxsDbModel.HouseWorkScore" />
+    <EntitySet Name="DayReport" EntityType="NxsDbModel.DayReport" />
+    <EntitySet Name="DayReportUser" EntityType="NxsDbModel.DayReportUser" />
+    <AssociationSet Name="FK_DayReportUser_HouseWorkScore" Association="NxsDbModel.FK_DayReportUser_HouseWorkScore">
+      <End Role="HouseWorkScore" EntitySet="HouseWorkScore" />
+      <End Role="DayReportUser" EntitySet="DayReportUser" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="HouseWorkScore">
     <Key>
@@ -126,5 +132,54 @@
     <Property Name="hwName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="hwScore" Type="Int32" Nullable="false" />
     <Property Name="hwState" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DayReportUser" Relationship="NxsDbModel.FK_DayReportUser_HouseWorkScore" FromRole="HouseWorkScore" ToRole="DayReportUser" />
   </EntityType>
+  <EntityType Name="DayReport">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkDoneSituation" Type="Int32" />
+    <Property Name="WorkAttitude" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkEnergy" Type="Int32" Nullable="false" />
+    <Property Name="WorkTime" Type="Int32" Nullable="false" />
+    <Property Name="PersonalResult" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PersonalQuestion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PersonalSuggest" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="PersonalIsUseful" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Communication" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ThingOfUseful" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CircleOfFriend" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Chanllenge" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Movement" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Expand" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="FamilyCommunication" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="HouseScores" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DayReportTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="WorkGetScore" Type="Int32" />
+    <Property Name="WorkRemark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="DayReportUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DayReportId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HouseWorkScore" Relationship="NxsDbModel.FK_DayReportUser_HouseWorkScore" FromRole="DayReportUser" ToRole="HouseWorkScore" />
+  </EntityType>
+  <Association Name="FK_DayReportUser_HouseWorkScore">
+    <End Type="NxsDbModel.HouseWorkScore" Role="HouseWorkScore" Multiplicity="1" />
+    <End Type="NxsDbModel.DayReportUser" Role="DayReportUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HouseWorkScore">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DayReportUser">
+        <PropertyRef Name="DayReportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

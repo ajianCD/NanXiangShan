@@ -32,11 +32,7 @@
 </style>
 
 <div class="module" style="width: 98%; margin:0 auto;">
-    <div class="module-head">
-        <h5>日报统计</h5>
-    </div>
     <div class="module-body">
-
         <div class="alert">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <strong>说明!</strong> <br /><br />
@@ -73,32 +69,46 @@
             <fieldset>
                 <legend>工作总结</legend>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">完成情况</label>
+                    <label class="col-sm-2 control-label">投入时间</label>
                     <div class="col-sm-4">
-                        @Html.Action("Radio_YLZC", "Component", new { area = "", })
+                        <div class="input-group">
+                            <input id="hWorkTime" type="text" class="form-control">
+                            <span class="input-group-addon">小时</span>
+                        </div>
+                        @*@Html.Action("Radio_YLZC", "Component", new { area = "", })*@
                         @*@{Html.RenderAction("Radio_YLZC", "Component", new { area = "" });}*@
                     </div>
-                    <label class="col-sm-2 control-label">态度</label>
-                    <div class="col-sm-4">
-                        @Html.Action("Radio_YLZC", "Component", new { area = "", })
-                    </div>
-                </div>
-                <div class="form-group">
                     <label class="col-sm-2 control-label">投入精力</label>
                     <div class="col-sm-4">
                         <div class="input-group">
-                            <input type="text" class="form-control">
+                            <input id="hWorkEnergy" type="text" class="form-control">
+                            <span class="input-group-addon">%</span>
+                        </div>
+                        @*@Html.Action("Radio_YLZC", "Component", new { area = "", })*@
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">工作完成情况</label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <input id="hWorkDoneSituation" type="text" class="form-control">
                             <span class="input-group-addon">%</span>
                         </div>
                     </div>
-                    <label class="col-sm-2 control-label">时间</label>
+                    <label class="col-sm-2 control-label">自我评分</label>
                     <div class="col-sm-4">
                         <div class="input-group">
-                            <input type="text" class="form-control">
-                            <span class="input-group-addon">%</span>
+                            <input id="hWorkGetScore" type="text" class="form-control">
+                            <span class="input-group-addon">分</span>
                         </div>
                     </div>
 
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">备注</label>
+                    <div class="col-sm-4">
+                        <textarea id="hWorkRemark" class="form-control" rows="3"></textarea>
+                    </div>
                 </div>
             </fieldset>
 
@@ -107,20 +117,20 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">收获</label>
                     <div class="col-sm-4">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="hPersonalResult" class="form-control" rows="3"></textarea>
                     </div>
-                    <label class="col-sm-2 control-label">自身问题</label>
+                    <label id="h" class="col-sm-2 control-label">自身问题</label>
                     <div class="col-sm-4">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="hPersonalQuestion" class="form-control" rows="3"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">给自己的建议</label>
                     <div class="col-sm-4">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="hPersonalSuggest" class="form-control" rows="3"></textarea>
                     </div>
                     <label class="col-sm-2 control-label">是否有意义</label>
-                    <div class="col-sm-4">
+                    <div class="col-sm-4" id="hPersonalIsUseful">
                         <label class="radio-inline">
                             <input type="radio" name="rdyy" class="you" value="是"> 是
                         </label>
@@ -137,42 +147,42 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">沟通交流</label>
                     <div class="col-sm-4">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="hCommunication" class="form-control" rows="3"></textarea>
                     </div>
                     <label class="col-sm-2 control-label">有意义事</label>
                     <div class="col-sm-4">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="hThingOfUseful" class="form-control" rows="3"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">朋友圈</label>
                     <div class="col-sm-4">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="hCircleOfFriend" class="form-control" rows="3"></textarea>
                     </div>
                     <label class="col-sm-2 control-label">挑战</label>
                     <div class="col-sm-4">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="hChanllenge" class="form-control" rows="3"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">运动</label>
                     <div class="col-sm-4">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="hMovement" class="form-control" rows="3"></textarea>
                     </div>
                     <label class="col-sm-2 control-label">拓展</label>
                     <div class="col-sm-4">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="hExpand" class="form-control" rows="3"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">亲人</label>
                     <div class="col-sm-4">
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea id="hFamilyCommunication" class="form-control" rows="3"></textarea>
                     </div>
                     <label class="col-sm-2 control-label">家务得分</label>
                     <div class="col-sm-4">
                         <div class="input-group">
-                            <input type="text" readonly class="form-control">
+                            <input id="hHouseScores" type="text" readonly class="form-control">
                             <span class="input-group-addon" style="cursor:pointer" data-toggle="modal" data-target="#myModal">统计</span>
                         </div>
 
@@ -266,6 +276,7 @@
      * 得分统计
      */
     function tijiao() {
+        $("#hHouseScores").val($("#RstScore").html());
         $('#myModal').modal('hide');
     }
 
@@ -305,7 +316,45 @@
 
     function Databtn() {
         var Result = {};
-        Result.
-        alert($("#datepicker").find("input").val());
+        Result.DayReportTime = $("#datepicker").find("input").val();
+        if (Result.DayReportTime == "" || Result.DayReportTime == undefined) {
+            alert("nope!你还没有选择日报日期");
+            return;
+        }
+        //工作总结模块
+        Result.WorkTime = $("#hWorkTime").val();
+        Result.WorkEnergy = $("#hWorkEnergy").val();
+        Result.WorkDoneSituation = $("#hWorkDoneSituation").val();
+        Result.WorkGetScore = $("#hWorkGetScore").val();
+        Result.WorkRemark = $("#hWorkRemark").val();
+
+        //个人总结
+        Result.PersonalResult = $("#hPersonalResult").val();
+        Result.PersonalQuestion = $("#hPersonalQuestion").val();
+        Result.PersonalSuggest = $("#hPersonalSuggest").val();
+        Result.PersonalIsUseful = $('input:radio[name="rdyy"]:checked').val();
+
+        //其他
+        Result.Communication = $("#hCommunication").val();
+        Result.ThingOfUseful = $("#hThingOfUseful").val();
+        Result.CircleOfFriend = $("#hCircleOfFriend").val();
+        Result.Chanllenge = $("#hChanllenge").val();
+        Result.Movement = $("#hMovement").val();
+        Result.Expand = $("#hExpand").val();
+        Result.FamilyCommunication = $("#hFamilyCommunication").val();
+        Result.HouseScores = $("#hHouseScores").val();
+
+        $.ajax({
+            url: '/Report/DayTotal/AddDayReportInfo',
+            type: 'POST',
+            async: false,
+            data: { dayRepot: Result, rand: Math.random() },
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (xhr) {
+            }
+        });
+        
     }
 </script>

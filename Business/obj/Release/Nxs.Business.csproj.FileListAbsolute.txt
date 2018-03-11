@@ -11,3 +11,16 @@ E:\MyVS-Project\NanXiangShan\Business\bin\Release\EntityFramework.dll
 E:\MyVS-Project\NanXiangShan\Business\bin\Release\Nxs.Data.dll.config
 E:\MyVS-Project\NanXiangShan\Business\bin\Release\EntityFramework.xml
 E:\MyVS-Project\NanXiangShan\Business\obj\Release\Nxs.Business.csproj.CoreCompileInputs.cache
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Release\Business.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Release\Business.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Release\Nxs.Data.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Release\Nxs.Model.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Release\EntityFramework.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Release\Nxs.Data.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Release\Nxs.Data.dll.config
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Release\Nxs.Model.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Release\EntityFramework.xml
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\obj\Release\Nxs.Business.csprojResolveAssemblyReference.cache
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\obj\Release\Nxs.Business.csproj.CoreCompileInputs.cache
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\obj\Release\Business.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Business\obj\Release\Business.pdb

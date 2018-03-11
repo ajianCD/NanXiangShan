@@ -12,18 +12,12 @@ namespace Nxs.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class HouseWorkScore
+    public partial class DayReportUser
     {
-        public HouseWorkScore()
-        {
-            this.DayReportUser = new HashSet<DayReportUser>();
-        }
-    
         public string Id { get; set; }
-        public string hwName { get; set; }
-        public int hwScore { get; set; }
-        public int hwState { get; set; }
+        public string UserId { get; set; }
+        public string DayReportId { get; set; }
     
-        public virtual ICollection<DayReportUser> DayReportUser { get; set; }
+        public virtual HouseWorkScore HouseWorkScore { get; set; }
     }
 }

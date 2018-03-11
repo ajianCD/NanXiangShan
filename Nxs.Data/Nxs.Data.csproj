@@ -64,6 +64,13 @@
     <Compile Include="C__MigrationHistory.cs">
       <DependentUpon>NxsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DayReport.cs">
+      <DependentUpon>NxsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DayReportUser.cs">
+      <DependentUpon>NxsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Family\DayReportDal.cs" />
     <Compile Include="Family\HouseWork.cs" />
     <Compile Include="HouseWorkScore.cs">
       <DependentUpon>NxsModel.tt</DependentUpon>
