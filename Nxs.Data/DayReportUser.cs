@@ -17,7 +17,5 @@ namespace Nxs.Data
         public string Id { get; set; }
         public string UserId { get; set; }
         public string DayReportId { get; set; }
-    
-        public virtual HouseWorkScore HouseWorkScore { get; set; }
     }
 }

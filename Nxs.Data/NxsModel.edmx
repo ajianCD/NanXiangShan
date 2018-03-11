@@ -116,19 +116,8 @@
           <Property Name="hwName" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="hwScore" Type="int" Nullable="false" />
           <Property Name="hwState" Type="int" Nullable="false" />
+          <Property Name="isIncludeTimes" Type="bit" />
         </EntityType>
-        <Association Name="FK_DayReportUser_HouseWorkScore">
-          <End Role="HouseWorkScore" Type="Self.HouseWorkScore" Multiplicity="1" />
-          <End Role="DayReportUser" Type="Self.DayReportUser" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HouseWorkScore">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="DayReportUser">
-              <PropertyRef Name="DayReportId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -195,10 +184,6 @@
           <EntitySet Name="DayReport" EntityType="Self.DayReport" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DayReportUser" EntityType="Self.DayReportUser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HouseWorkScore" EntityType="Self.HouseWorkScore" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_DayReportUser_HouseWorkScore" Association="Self.FK_DayReportUser_HouseWorkScore">
-            <End Role="HouseWorkScore" EntitySet="HouseWorkScore" />
-            <End Role="DayReportUser" EntitySet="DayReportUser" />
-          </AssociationSet>
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
             <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
@@ -336,24 +321,10 @@
             <End Role="AspNetRoles" EntitySet="AspNetRoles" />
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
-          <EntitySet Name="HouseWorkScore" EntityType="NxsDbModel.HouseWorkScore" />
           <EntitySet Name="DayReport" EntityType="NxsDbModel.DayReport" />
           <EntitySet Name="DayReportUser" EntityType="NxsDbModel.DayReportUser" />
-          <AssociationSet Name="FK_DayReportUser_HouseWorkScore" Association="NxsDbModel.FK_DayReportUser_HouseWorkScore">
-            <End Role="HouseWorkScore" EntitySet="HouseWorkScore" />
-            <End Role="DayReportUser" EntitySet="DayReportUser" />
-          </AssociationSet>
+          <EntitySet Name="HouseWorkScore" EntityType="NxsDbModel.HouseWorkScore" />
         </EntityContainer>
-        <EntityType Name="HouseWorkScore">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="hwName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="hwScore" Type="Int32" Nullable="false" />
-          <Property Name="hwState" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DayReportUser" Relationship="NxsDbModel.FK_DayReportUser_HouseWorkScore" FromRole="HouseWorkScore" ToRole="DayReportUser" />
-        </EntityType>
         <EntityType Name="DayReport">
           <Key>
             <PropertyRef Name="Id" />
@@ -388,20 +359,17 @@
           <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DayReportId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="HouseWorkScore" Relationship="NxsDbModel.FK_DayReportUser_HouseWorkScore" FromRole="DayReportUser" ToRole="HouseWorkScore" />
         </EntityType>
-        <Association Name="FK_DayReportUser_HouseWorkScore">
-          <End Type="NxsDbModel.HouseWorkScore" Role="HouseWorkScore" Multiplicity="1" />
-          <End Type="NxsDbModel.DayReportUser" Role="DayReportUser" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HouseWorkScore">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="DayReportUser">
-              <PropertyRef Name="DayReportId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="HouseWorkScore">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hwName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="hwScore" Type="Int32" Nullable="false" />
+          <Property Name="hwState" Type="Int32" Nullable="false" />
+          <Property Name="isIncludeTimes" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -478,16 +446,6 @@
               <ScalarProperty Name="Id" ColumnName="UserId" />
             </EndProperty>
           </AssociationSetMapping>
-          <EntitySetMapping Name="HouseWorkScore">
-            <EntityTypeMapping TypeName="NxsDbModel.HouseWorkScore">
-              <MappingFragment StoreEntitySet="HouseWorkScore">
-                <ScalarProperty Name="hwState" ColumnName="hwState" />
-                <ScalarProperty Name="hwScore" ColumnName="hwScore" />
-                <ScalarProperty Name="hwName" ColumnName="hwName" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="DayReport">
             <EntityTypeMapping TypeName="NxsDbModel.DayReport">
               <MappingFragment StoreEntitySet="DayReport">
@@ -521,6 +479,17 @@
               <MappingFragment StoreEntitySet="DayReportUser">
                 <ScalarProperty Name="DayReportId" ColumnName="DayReportId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HouseWorkScore">
+            <EntityTypeMapping TypeName="NxsDbModel.HouseWorkScore">
+              <MappingFragment StoreEntitySet="HouseWorkScore">
+                <ScalarProperty Name="isIncludeTimes" ColumnName="isIncludeTimes" />
+                <ScalarProperty Name="hwState" ColumnName="hwState" />
+                <ScalarProperty Name="hwScore" ColumnName="hwScore" />
+                <ScalarProperty Name="hwName" ColumnName="hwName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

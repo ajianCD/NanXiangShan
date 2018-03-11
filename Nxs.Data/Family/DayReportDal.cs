@@ -21,7 +21,9 @@ namespace Nxs.Data.Family
 
                 dayModel.Id = Guid.NewGuid().ToString();
                 dayModel.CreateTime = DateTime.Now;
+                dayModel.UserId = userId;
                 _ctx.DayReport.Add(dayModel);
+
 
                 DayReportUser dru = new DayReportUser();
                 dru.Id = Guid.NewGuid().ToString();

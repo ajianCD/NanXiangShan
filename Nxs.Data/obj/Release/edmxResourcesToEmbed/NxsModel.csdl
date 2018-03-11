@@ -116,24 +116,10 @@
       <End Role="AspNetRoles" EntitySet="AspNetRoles" />
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
     </AssociationSet>
-    <EntitySet Name="HouseWorkScore" EntityType="NxsDbModel.HouseWorkScore" />
     <EntitySet Name="DayReport" EntityType="NxsDbModel.DayReport" />
     <EntitySet Name="DayReportUser" EntityType="NxsDbModel.DayReportUser" />
-    <AssociationSet Name="FK_DayReportUser_HouseWorkScore" Association="NxsDbModel.FK_DayReportUser_HouseWorkScore">
-      <End Role="HouseWorkScore" EntitySet="HouseWorkScore" />
-      <End Role="DayReportUser" EntitySet="DayReportUser" />
-    </AssociationSet>
+    <EntitySet Name="HouseWorkScore" EntityType="NxsDbModel.HouseWorkScore" />
   </EntityContainer>
-  <EntityType Name="HouseWorkScore">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="hwName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="hwScore" Type="Int32" Nullable="false" />
-    <Property Name="hwState" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="DayReportUser" Relationship="NxsDbModel.FK_DayReportUser_HouseWorkScore" FromRole="HouseWorkScore" ToRole="DayReportUser" />
-  </EntityType>
   <EntityType Name="DayReport">
     <Key>
       <PropertyRef Name="Id" />
@@ -168,18 +154,14 @@
     <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DayReportId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="HouseWorkScore" Relationship="NxsDbModel.FK_DayReportUser_HouseWorkScore" FromRole="DayReportUser" ToRole="HouseWorkScore" />
   </EntityType>
-  <Association Name="FK_DayReportUser_HouseWorkScore">
-    <End Type="NxsDbModel.HouseWorkScore" Role="HouseWorkScore" Multiplicity="1" />
-    <End Type="NxsDbModel.DayReportUser" Role="DayReportUser" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HouseWorkScore">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="DayReportUser">
-        <PropertyRef Name="DayReportId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
+  <EntityType Name="HouseWorkScore">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="hwName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="hwScore" Type="Int32" Nullable="false" />
+    <Property Name="hwState" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

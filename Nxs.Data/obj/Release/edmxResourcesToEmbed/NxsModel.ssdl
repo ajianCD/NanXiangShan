@@ -112,18 +112,6 @@
     <Property Name="hwScore" Type="int" Nullable="false" />
     <Property Name="hwState" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK_DayReportUser_HouseWorkScore">
-    <End Role="HouseWorkScore" Type="Self.HouseWorkScore" Multiplicity="1" />
-    <End Role="DayReportUser" Type="Self.DayReportUser" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HouseWorkScore">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="DayReportUser">
-        <PropertyRef Name="DayReportId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -190,10 +178,6 @@
     <EntitySet Name="DayReport" EntityType="Self.DayReport" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DayReportUser" EntityType="Self.DayReportUser" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HouseWorkScore" EntityType="Self.HouseWorkScore" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_DayReportUser_HouseWorkScore" Association="Self.FK_DayReportUser_HouseWorkScore">
-      <End Role="HouseWorkScore" EntitySet="HouseWorkScore" />
-      <End Role="DayReportUser" EntitySet="DayReportUser" />
-    </AssociationSet>
     <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
       <End Role="AspNetUsers" EntitySet="AspNetUsers" />
       <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />

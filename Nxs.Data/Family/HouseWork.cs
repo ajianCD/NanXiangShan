@@ -45,6 +45,7 @@ namespace Nxs.Data.Family
                     hwItem.hwName = hw.hwName;
                     hwItem.hwScore = hw.hwScore;
                     hwItem.hwState = hw.hwState;
+                    hwItem.isIncludeTimes = hw.isIncludeTimes;
                 }
                 else
                 {
