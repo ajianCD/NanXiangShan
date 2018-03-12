@@ -183,7 +183,9 @@
     <Content Include="Scripts\BootStrap\bootstrap13.js" />
     <Content Include="Scripts\BootStrap\respond.js" />
     <Content Include="Scripts\BootStrap\respond.min.js" />
-    <Content Include="Scripts\Commen\DoCookie.js" />
+    <Content Include="Scripts\Commen\DoCookie.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Config\AppSettings.config" />
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\User\Views\Manage\UserList.cshtml" />

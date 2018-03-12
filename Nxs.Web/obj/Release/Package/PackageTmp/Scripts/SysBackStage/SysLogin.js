@@ -1,6 +1,4 @@
-﻿/// <reference path="../Common/DoCookie.js" />
-
-var posX;
+﻿var posX;
 var posY;
 var layerID;
 var NowX;
@@ -20,7 +18,7 @@ function MoveLayer(id, e) {
     layerID = id;
     //鼠标移动
     document.onmousemove = function (ev) {
-        if (ev == null) ev = window.event;//如果是IE
+        if (ev === null) ev = window.event;//如果是IE
 
         //设置不超出浏览器
         var MaxLeft = $(window).width() - $("#" + id).width() - 10;
@@ -76,7 +74,7 @@ function dot() {
 function Login() {
     var vName = $('#Name').val();
     var vPwd = $('#Password').val();
-    if (vName == '' || vPwd == '') {
+    if (vName === '' || vPwd === '') {
         layer.alert("用户名/密码不能为空！", { icon: 2, title: "温馨提示" });
         return;
     }
@@ -86,9 +84,8 @@ function Login() {
         data: { Name: vName, Password: vPwd },
         url: '/Admin/Login',
         success: function (db) {
-            console.log(db);
-            if (db.result == true) {
-                location.href = "/Admin/Main";
+            if (db.result) {
+                location.href = "/Admin/Family";
             } else {
                 //alert(db.Message);
                 layer.alert(db.message);

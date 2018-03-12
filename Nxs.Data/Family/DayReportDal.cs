@@ -38,6 +38,7 @@ namespace Nxs.Data.Family
                 return _ctx.SaveChanges();
             }
         }
+        
         /// <summary>
         /// 获取who 的某天的数据
         /// </summary>
@@ -48,6 +49,19 @@ namespace Nxs.Data.Family
             using (DefaultConnection _ctx = new DefaultConnection())
             {
                 return _ctx.DayReport.Where(item => item.DayReportTime.Equals(dd) && item.UserId == userId).FirstOrDefault();
+            }
+        }
+
+        /// <summary>
+        /// 获取用户所有日报信息
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public List<DayReport> Get(string userId)
+        {
+            using (DefaultConnection _ctx = new DefaultConnection())
+            {
+                return _ctx.DayReport.Where(item => item.UserId == userId).ToList();
             }
         }
     }

@@ -37,5 +37,16 @@ namespace Business.Family
         {
             return _dayReportDal.Get(dd, userId);
         }
+
+
+        /// <summary>
+        /// 获取用户所有日报信息
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
+        public List<DayReport> Get(string userId)
+        {
+            return _dayReportDal.Get(userId);
+        }
     }
 }

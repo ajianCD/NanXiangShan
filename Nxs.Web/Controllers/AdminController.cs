@@ -66,12 +66,33 @@ namespace Nxs.Web.Controllers
         /// <returns></returns>
         public ActionResult Main()
         {
+            string userId = User.Identity.GetUserId();
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToAction("Login");
+            }
             return View();
         }
 
         public ActionResult Family()
         {
+            string userId = User.Identity.GetUserId();
+            ViewBag.Name = User.Identity.GetUserName();
+            if (string.IsNullOrEmpty(userId))
+            {
+                return RedirectToAction("Login");
+            }
             return View();
+        }
+
+        /// <summary>
+        /// 推出登陆
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult LogOff()
+        {
+            AuthManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Login", "Admin");
         }
 
 

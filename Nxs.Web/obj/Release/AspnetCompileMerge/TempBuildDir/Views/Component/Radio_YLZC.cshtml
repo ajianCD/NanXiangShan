@@ -1,0 +1,17 @@
+﻿@{
+    Layout = null;
+}
+@{ var newName = Guid.NewGuid().ToString();}
+
+<label class="radio-inline">
+    <input type="radio" name="@newName" class="you" value="优"> 优
+</label>
+<label class="radio-inline">
+    <input type="radio" name="@newName" class="liang" value="良"> 良
+</label>
+<label class="radio-inline">
+    <input type="radio" name="@newName" class="zhong" value="中"> 中
+</label>
+<label class="radio-inline">
+    <input type="radio" name="@newName" class="cha" value="差"> 差
+</label>

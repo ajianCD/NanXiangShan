@@ -45,7 +45,7 @@
             <li><a tohref="/Report/DayTotal" name="日报统计"><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span>&nbsp;&nbsp;日报统计</a></li>
             <li><a tohref="/Report/DayDetail" name="日报详细"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;&nbsp;日报详细</a></li>
         </ul>
-        <a href="/Admin/Login" class="nav-header"><i class="icon-comment"></i>退出登录</a>
+        <a href="/Admin/LogOff" class="nav-header"><i class="icon-comment"></i>退出登录</a>
     </div>
 
 
@@ -53,6 +53,7 @@
         <ul class="breadcrumb">
             <li><a href="/Admin/Family/" id="contentFirst">后台管理</a> <span class="divider"></span></li>
             <li class="active" id="contentSecond">系统主页</li>
+            <span class="navbar-right" style="margin-right:15px;">当前用户：@ViewBag.Name </span>
         </ul>
         <div class="divContent">
             <h2 style="margin-left:10px; color:darkgray">该系统主要用户家庭总结，第一个版本功能：家务得分标准，日报统计，日报详细。</h2>
@@ -73,9 +74,9 @@
             } else {
                 $("#contentSecond").html($(this).attr("name"));
             }
-            $("#main").load(vpath, { currentPage: 1, pageSize: 10 }, function () {
-                layer.close(loadindex);
-            });
+            //$("#main").load(vpath, { currentPage: 1, pageSize: 10 }, function () {
+            //    layer.close(loadindex);
+            //});
             var loadindex;
             $.ajax({
                 url: vpath,

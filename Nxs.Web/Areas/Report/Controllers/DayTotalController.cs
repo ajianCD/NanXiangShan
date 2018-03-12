@@ -27,7 +27,12 @@ namespace Nxs.Web.Areas.Report.Controllers
             return View();
         }
 
-
+        /// <summary>
+        /// 新增日报信息
+        /// </summary>
+        /// <param name="dayRepot"></param>
+        /// <param name="houseWorkIds"></param>
+        /// <returns></returns>
         public JsonResult AddDayReportInfo(DayReport dayRepot, string houseWorkIds)
         {
             string userId = User.Identity.GetUserId();

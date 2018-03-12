@@ -9,8 +9,8 @@ namespace Nxs.Web.Models
     public class LoginModel
     {
         [Required]
-        [EmailAddress]
-        [Display(Name = "电子邮件")]
+        //[EmailAddress]
+        //[Display(Name = "电子邮件")]
         public string Name { get; set; }
 
         [Required]

@@ -43,9 +43,9 @@
             $(".sidebar-nav a").click(function () {
                 var vpath = $(this).attr("tohref");
                 //var loadindex = layer.load(0, { shade: [0.3, '#fff'] });
-                $("#main").load(vpath, { currentPage: 1, pageSize: 10 }, function () {
-                    layer.close(loadindex);
-                });
+                //$("#main").load(vpath, { currentPage: 1, pageSize: 10 }, function () {
+                //    layer.close(loadindex);
+                //});
                 var loadindex;
                 $.ajax({
                     url: vpath,

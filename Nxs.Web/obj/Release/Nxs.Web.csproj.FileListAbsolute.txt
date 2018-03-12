@@ -138,3 +138,4 @@ E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\obj\Release\Nxs.Web.csprojResolv
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\obj\Release\Nxs.Web.csproj.CoreCompileInputs.cache
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\obj\Release\Nxs.Web.dll
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\obj\Release\Nxs.Web.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Web\bin\Scripts\Commen\DoCookie.js

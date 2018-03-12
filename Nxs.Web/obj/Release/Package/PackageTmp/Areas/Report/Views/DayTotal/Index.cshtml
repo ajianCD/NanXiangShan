@@ -401,9 +401,16 @@
             async: false,
             data: { dayRepot: Result, houseWorkIds: hwVVV.join(','), rand: Math.random() },
             success: function (data) {
-                layer.alert(data.Message);
+                if (data.Success) {
+                    var lyI = layer.confirm('恭喜，数据新增(修改)成功！', { icon: 6, title: '提示', btn: ['确定'] }, function (index) {
+                        layer.close(lyI);
+                    });
+                } else {
+                    layer.error('操作失败:' + data.Message);
+                }
             },
             error: function (xhr) {
+
             }
         });
 

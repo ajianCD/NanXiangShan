@@ -22,3 +22,5 @@ E:\MyVS-Project\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.dll
 E:\MyVS-Project\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.pdb
 E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Model.dll
 E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Model.pdb
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Model.dll
+E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Model.pdb
