@@ -99,15 +99,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="DayReportUser">
-      <EntityTypeMapping TypeName="NxsDbModel.DayReportUser">
-        <MappingFragment StoreEntitySet="DayReportUser">
-          <ScalarProperty Name="DayReportId" ColumnName="DayReportId" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="HouseWorkScore">
       <EntityTypeMapping TypeName="NxsDbModel.HouseWorkScore">
         <MappingFragment StoreEntitySet="HouseWorkScore">
@@ -115,6 +106,16 @@
           <ScalarProperty Name="hwState" ColumnName="hwState" />
           <ScalarProperty Name="hwScore" ColumnName="hwScore" />
           <ScalarProperty Name="hwName" ColumnName="hwName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DayReportUser">
+      <EntityTypeMapping TypeName="NxsDbModel.DayReportUser">
+        <MappingFragment StoreEntitySet="DayReportUser">
+          <ScalarProperty Name="Times" ColumnName="Times" />
+          <ScalarProperty Name="DayReportId" ColumnName="DayReportId" />
+          <ScalarProperty Name="HouseWorkScoreId" ColumnName="HouseWorkScoreId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

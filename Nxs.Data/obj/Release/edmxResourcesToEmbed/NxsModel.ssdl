@@ -100,8 +100,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HouseWorkScoreId" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="DayReportId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Times" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="HouseWorkScore">
     <Key>
@@ -111,6 +112,7 @@
     <Property Name="hwName" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="hwScore" Type="int" Nullable="false" />
     <Property Name="hwState" Type="int" Nullable="false" />
+    <Property Name="isIncludeTimes" Type="bit" />
   </EntityType>
   <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
     <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">

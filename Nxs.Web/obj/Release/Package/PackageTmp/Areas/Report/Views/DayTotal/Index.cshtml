@@ -1,0 +1,411 @@
+﻿
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.min.js"></script>
+<script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<style type="text/css">
+    .module {
+        box-shadow: 0 0 3px rgba(0,0,0,.1);
+        border-color: #e9e9e9;
+        margin-bottom: 20px;
+        background-color: #fff;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    }
+
+    .module-head {
+        color: #767676;
+        background-color: #f6f6f6;
+        border-color: #e9e9e9;
+        padding: 10px 15px;
+        border-bottom: 1px solid transparent;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+    }
+
+    .module-body {
+        padding: 15px;
+    }
+</style>
+
+<div class="module" style="width: 98%; margin:0 auto;">
+    <div class="module-body">
+        <div class="alert">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>说明!</strong> <br /><br />
+            <strong class="btn" style="background-color:#0070C0; color:white; font-weight:900">完成很好（优）</strong>
+            <strong class="btn" style="background-color:#92D050; color:white; font-weight:900">完成较好（良）</strong>
+            <strong class="btn" style="background-color:#FFC000; color:white; font-weight:900">完成一般（中）</strong>
+            <strong class="btn" style="background-color:#FF0000; color:white; font-weight:900">完成极差（差）</strong>
+            <strong class="btn" style="background-color:#BFBFBF; color:white; font-weight:900">没有内容</strong>
+        </div>
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>要求!</strong> <br />
+            1、每天睡觉前填写；<br />
+            2、根据实际情况进行填写，不许虚构、乱填、编造，保证填写均为实时且正确评估； <br />
+            3、优->提前完成任务且任务完成非常理想；良->按时完成任务且任务且任务完成较理想；中->完成任务且任务完成通过；差：未完成对应任务且任务完成不正确；<br />
+            4、百分数评估分段：(90%-100%)->完全投入、非常、完全状态(优)；(70%-89%)->非常好的投入、认真、负责(良)；(50%-69%)->一般心态(中)；(50%以下)->完全不投入(差)；<br />
+            5、家务：10分及以上->非常勤快(优)；6-9分->勤快(良)；3-5分->一般(中)；1-2分->懒散(差)；<br />
+        </div>
+
+        <form class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">选择日期：</label>
+                    <!--指定 date标记-->
+                    <div class='input-group date col-md-5' id='datepicker'>
+                        <input type='text' class="form-control" readonly />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>工作总结</legend>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">投入时间</label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <input id="hWorkTime" type="text" class="form-control">
+                            <span class="input-group-addon">小时</span>
+                        </div>
+                        @*@Html.Action("Radio_YLZC", "Component", new { area = "", })*@
+                        @*@{Html.RenderAction("Radio_YLZC", "Component", new { area = "" });}*@
+                    </div>
+                    <label class="col-sm-2 control-label">投入精力</label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <input id="hWorkEnergy" type="text" class="form-control">
+                            <span class="input-group-addon">%</span>
+                        </div>
+                        @*@Html.Action("Radio_YLZC", "Component", new { area = "", })*@
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">工作完成情况</label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <input id="hWorkDoneSituation" type="text" class="form-control">
+                            <span class="input-group-addon">%</span>
+                        </div>
+                    </div>
+                    <label class="col-sm-2 control-label">自我评分</label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <input id="hWorkGetScore" type="text" class="form-control">
+                            <span class="input-group-addon">分</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">备注</label>
+                    <div class="col-sm-4">
+                        <textarea id="hWorkRemark" class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>个人总结</legend>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">收获</label>
+                    <div class="col-sm-4">
+                        <textarea id="hPersonalResult" class="form-control" rows="3"></textarea>
+                    </div>
+                    <label id="h" class="col-sm-2 control-label">自身问题</label>
+                    <div class="col-sm-4">
+                        <textarea id="hPersonalQuestion" class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">给自己的建议</label>
+                    <div class="col-sm-4">
+                        <textarea id="hPersonalSuggest" class="form-control" rows="3"></textarea>
+                    </div>
+                    <label class="col-sm-2 control-label">是否有意义</label>
+                    <div class="col-sm-4" id="hPersonalIsUseful">
+                        <label class="radio-inline">
+                            <input type="radio" name="rdyy" class="you" value="是"> 是
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="rdyy" class="liang" value="否"> 否
+                        </label>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>其他</legend>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">沟通交流</label>
+                    <div class="col-sm-4">
+                        <textarea id="hCommunication" class="form-control" rows="3"></textarea>
+                    </div>
+                    <label class="col-sm-2 control-label">有意义事</label>
+                    <div class="col-sm-4">
+                        <textarea id="hThingOfUseful" class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">朋友圈</label>
+                    <div class="col-sm-4">
+                        <textarea id="hCircleOfFriend" class="form-control" rows="3"></textarea>
+                    </div>
+                    <label class="col-sm-2 control-label">挑战</label>
+                    <div class="col-sm-4">
+                        <textarea id="hChanllenge" class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">运动</label>
+                    <div class="col-sm-4">
+                        <textarea id="hMovement" class="form-control" rows="3"></textarea>
+                    </div>
+                    <label class="col-sm-2 control-label">拓展</label>
+                    <div class="col-sm-4">
+                        <textarea id="hExpand" class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">亲人</label>
+                    <div class="col-sm-4">
+                        <textarea id="hFamilyCommunication" class="form-control" rows="3"></textarea>
+                    </div>
+                    <label class="col-sm-2 control-label">家务得分</label>
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <input id="hHouseScores" type="text" readonly class="form-control">
+                            <span class="input-group-addon" style="cursor:pointer" data-toggle="modal" data-target="#myModal">统计</span>
+                        </div>
+
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-actions text-right pal">
+                <button type="button" onclick="Databtn()" class="btn btn-primary">
+                    提交
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- 模态框（Modal）start -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    ×
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    家务得分详细
+                </h4>
+            </div>
+            <div class="modal-body">
+                <fieldset class="score1">
+                    <legend>1 points of housework</legend>
+                </fieldset>
+                <br />
+                <fieldset class="score2">
+                    <legend>2 points of housework</legend>
+                </fieldset>
+                <br />
+                <fieldset class="score3">
+                    <legend>3 points of housework</legend>
+                </fieldset>
+            </div>
+            <div class="modal-footer">
+                <span style="color:red; font-size:12px;">(当前家务得分为：<b id="RstScore">0</b>&nbsp; 分)</span>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    关闭
+                </button>
+                <button type="button" class="btn btn-primary" onclick="ScoreBtn()">
+                    提交
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- 模态框（Modal）end -->
+
+<script type="text/javascript">
+
+    $(function () {
+        $('#myModal').modal('hide');
+        //加载家务得分选项
+        GetScore(1);
+        GetScore(2);
+        GetScore(3);
+
+        $(".modal-body input").change(function () {
+            var scoreV = $(this).attr("scoreValue");
+            var cScore = parseInt($("#RstScore").html());
+            if ($(this).is(':checked'))
+                $("#RstScore").html(parseInt(scoreV) + cScore);
+            else {
+                var x = parseInt($(this).next().find('b').html());
+                $("#RstScore").html(cScore - parseInt(scoreV) * x);
+            }
+
+
+            $(this).next().find("b").html("1");
+
+        });
+    });
+
+    function AddOne(self, id, name, score) {
+        if (!$(self).parent().prev().find('input').is(':checked')) {
+            layer.alert("系统逻辑有待加强，今后完善，请先勾选该选项！");
+            return;
+        }
+
+        var cScore = parseInt($("#RstScore").html());
+        var vb = $(self).parent().prev().find("span b");
+
+        var curValue = vb.html();
+        vb.html(parseInt(curValue) + 1);
+        $("#RstScore").html(parseInt(cScore) + score);
+    }
+
+    function ReduceOne(self, id, name, score) {
+        if (!$(self).parent().prev().find('input').is(':checked')) {
+            layer.alert("系统逻辑有待加强，今后完善，请先勾选该选项！");
+            return;
+        }
+
+        var vb = $(self).parent().prev().find("span b");
+        var curValue = vb.html();
+        if (curValue == 1 || curValue == "1")
+            return;
+        vb.html(parseInt(curValue) - 1);
+
+        var vScore = parseInt($("#RstScore").html());
+        $("#RstScore").html(vScore - parseInt(score));
+
+    }
+    /**
+    日期控件绑定
+    */
+    $('#datepicker').datetimepicker({
+        language: 'zh-CN',//显示中文
+        format: 'yyyy-mm-dd',//显示格式
+        minView: "month",//设置只显示到月份
+        initialDate: new Date(),
+        autoclose: true,//选中自动关闭
+        todayBtn: true,//显示今日按钮
+    });
+
+    /**
+     * 得分统计
+     */
+    function ScoreBtn() {
+        $("#hHouseScores").val($("#RstScore").html());
+        $('#myModal').modal('hide');
+    }
+
+
+    /**
+    * 根据分数获取家务
+    * score 分数
+    */
+    function GetScore(score) {
+        $.ajax({
+            url: '/Report/Family/GetHwScore',
+            type: 'POST',
+            async: false,
+            data: { score: score, rand: Math.random() },
+            success: function (data) {
+                var html = [];
+                if (data.Data.length > 0) {
+
+                    for (var i = 0; i < data.Data.length; i++) {
+                        if (i % 2 == 0)
+                            html.push('<div class="row"><span class="col-sm-1"></span>');
+                        html.push('<div class="col-sm-5">');
+                        html.push('<label class="checkbox-inline">');
+                        html.push('<input type="checkbox" scoreValue="' + score + '"  value="' + data.Data[i].Id + '">');
+                        html.push(data.Data[i].hwName);
+                        html.push('<span style="color:red; font-size:8px;padding-left:5px;">X<b>1</b></span>');
+                        html.push('</label>');
+                        html.push('<span class="pull-right">');
+                        html.push('<span style="cursor:pointer" title="+1" onclick="AddOne(this,\'' + data.Data[i].Id + '\',\'' + data.Data[i].hwName + '\',' + score + ')" class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>');
+                        html.push('&nbsp;&nbsp;');
+                        html.push('<span style="cursor:pointer" title="-1" onclick="ReduceOne(this,\'' + data.Data[i].Id + '\',\'' + data.Data[i].hwName + '\',' + score + ')" class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>');
+                        html.push('</span>');
+                        html.push('</div>');
+                        if ((i + 1) % 2 == 0)
+                            html.push('</div>');
+                    }
+                    $(".score" + score).append(html.join(''));
+                }
+            },
+            error: function (xhr) {
+            }
+        });
+    }
+
+
+    function Databtn() {
+        var Result = {};
+        Result.DayReportTime = $("#datepicker").find("input").val();
+        if (Result.DayReportTime == "" || Result.DayReportTime == undefined) {
+            alert("nope!你还没有选择日报日期");
+            return;
+        }
+        //工作总结模块
+        Result.WorkTime = $("#hWorkTime").val();
+        Result.WorkEnergy = $("#hWorkEnergy").val();
+        Result.WorkDoneSituation = $("#hWorkDoneSituation").val();
+        Result.WorkGetScore = $("#hWorkGetScore").val();
+        Result.WorkRemark = $("#hWorkRemark").val();
+
+        //个人总结
+        Result.PersonalResult = $("#hPersonalResult").val();
+        Result.PersonalQuestion = $("#hPersonalQuestion").val();
+        Result.PersonalSuggest = $("#hPersonalSuggest").val();
+        Result.PersonalIsUseful = $('input:radio[name="rdyy"]:checked').val();
+
+        //其他
+        Result.Communication = $("#hCommunication").val();
+        Result.ThingOfUseful = $("#hThingOfUseful").val();
+        Result.CircleOfFriend = $("#hCircleOfFriend").val();
+        Result.Chanllenge = $("#hChanllenge").val();
+        Result.Movement = $("#hMovement").val();
+        Result.Expand = $("#hExpand").val();
+        Result.FamilyCommunication = $("#hFamilyCommunication").val();
+        Result.HouseScores = $("#hHouseScores").val();
+
+
+        var hwVVV = [];
+        var vInputs = $(".modal-body input");
+        vInputs.each(function () {
+            if ($(this).is(':checked')) {
+                hwVVV.push($(this).val() + '|' + $(this).next().find('b').html());
+            }
+        });
+
+        $.ajax({
+            url: '/Report/DayTotal/AddDayReportInfo',
+            type: 'POST',
+            async: false,
+            data: { dayRepot: Result, houseWorkIds: hwVVV.join(','), rand: Math.random() },
+            success: function (data) {
+                layer.alert(data.Message);
+            },
+            error: function (xhr) {
+            }
+        });
+
+    }
+</script>

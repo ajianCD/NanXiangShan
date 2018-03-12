@@ -15,7 +15,8 @@ namespace Nxs.Data
     public partial class DayReportUser
     {
         public string Id { get; set; }
-        public string UserId { get; set; }
+        public string HouseWorkScoreId { get; set; }
         public string DayReportId { get; set; }
+        public int Times { get; set; }
     }
 }

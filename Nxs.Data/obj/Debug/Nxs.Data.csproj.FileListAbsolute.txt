@@ -20,3 +20,5 @@ E:\MyVS-Project\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.csprojResolveAssemblyRe
 E:\MyVS-Project\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.csproj.CoreCompileInputs.cache
 E:\MyVS-Project\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.dll
 E:\MyVS-Project\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.pdb
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Model.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Model.pdb

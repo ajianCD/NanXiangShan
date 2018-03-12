@@ -20,3 +20,5 @@ E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Data\obj\Release\Nxs.Data.csprojReso
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Data\obj\Release\Nxs.Data.csproj.CoreCompileInputs.cache
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Data\obj\Release\Nxs.Data.dll
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Data\obj\Release\Nxs.Data.pdb
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Release\Nxs.Model.dll
+E:\MyVS-Project\NanXiangShan\Nxs.Data\bin\Release\Nxs.Model.pdb

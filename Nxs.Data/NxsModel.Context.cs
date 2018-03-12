@@ -31,7 +31,7 @@ namespace Nxs.Data
         public DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public DbSet<AspNetUsers> AspNetUsers { get; set; }
         public DbSet<DayReport> DayReport { get; set; }
-        public DbSet<DayReportUser> DayReportUser { get; set; }
         public DbSet<HouseWorkScore> HouseWorkScore { get; set; }
+        public DbSet<DayReportUser> DayReportUser { get; set; }
     }
 }

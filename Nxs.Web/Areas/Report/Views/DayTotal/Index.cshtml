@@ -230,7 +230,7 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">
                     关闭
                 </button>
-                <button type="button" class="btn btn-primary" onclick="tijiao()">
+                <button type="button" class="btn btn-primary" onclick="ScoreBtn()">
                     提交
                 </button>
             </div>
@@ -251,15 +251,49 @@
         $(".modal-body input").change(function () {
             var scoreV = $(this).attr("scoreValue");
             var cScore = parseInt($("#RstScore").html());
-            if ($(this).is(':checked')) {
+            if ($(this).is(':checked'))
                 $("#RstScore").html(parseInt(scoreV) + cScore);
+            else {
+                var x = parseInt($(this).next().find('b').html());
+                $("#RstScore").html(cScore - parseInt(scoreV) * x);
             }
-            else
-                $("#RstScore").html(cScore - scoreV);
-        });
 
+
+            $(this).next().find("b").html("1");
+
+        });
     });
 
+    function AddOne(self, id, name, score) {
+        if (!$(self).parent().prev().find('input').is(':checked')) {
+            layer.alert("系统逻辑有待加强，今后完善，请先勾选该选项！");
+            return;
+        }
+
+        var cScore = parseInt($("#RstScore").html());
+        var vb = $(self).parent().prev().find("span b");
+
+        var curValue = vb.html();
+        vb.html(parseInt(curValue) + 1);
+        $("#RstScore").html(parseInt(cScore) + score);
+    }
+
+    function ReduceOne(self, id, name, score) {
+        if (!$(self).parent().prev().find('input').is(':checked')) {
+            layer.alert("系统逻辑有待加强，今后完善，请先勾选该选项！");
+            return;
+        }
+
+        var vb = $(self).parent().prev().find("span b");
+        var curValue = vb.html();
+        if (curValue == 1 || curValue == "1")
+            return;
+        vb.html(parseInt(curValue) - 1);
+
+        var vScore = parseInt($("#RstScore").html());
+        $("#RstScore").html(vScore - parseInt(score));
+
+    }
     /**
     日期控件绑定
     */
@@ -275,7 +309,7 @@
     /**
      * 得分统计
      */
-    function tijiao() {
+    function ScoreBtn() {
         $("#hHouseScores").val($("#RstScore").html());
         $('#myModal').modal('hide');
     }
@@ -305,9 +339,9 @@
                         html.push('<span style="color:red; font-size:8px;padding-left:5px;">X<b>1</b></span>');
                         html.push('</label>');
                         html.push('<span class="pull-right">');
-                        html.push('<span style="cursor:pointer" title="+1" onclick="AddOne(\'' + data.Data[i].Id + '\',\'' + data.Data[i].hwName + '\',1)" class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>');
+                        html.push('<span style="cursor:pointer" title="+1" onclick="AddOne(this,\'' + data.Data[i].Id + '\',\'' + data.Data[i].hwName + '\',' + score + ')" class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>');
                         html.push('&nbsp;&nbsp;');
-                        html.push('<span style="cursor:pointer" title="-1" onclick="ReduceOne(\'' + data.Data[i].Id + '\',1)" class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>');
+                        html.push('<span style="cursor:pointer" title="-1" onclick="ReduceOne(this,\'' + data.Data[i].Id + '\',\'' + data.Data[i].hwName + '\',' + score + ')" class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>');
                         html.push('</span>');
                         html.push('</div>');
                         if ((i + 1) % 2 == 0)
@@ -352,13 +386,22 @@
         Result.FamilyCommunication = $("#hFamilyCommunication").val();
         Result.HouseScores = $("#hHouseScores").val();
 
+
+        var hwVVV = [];
+        var vInputs = $(".modal-body input");
+        vInputs.each(function () {
+            if ($(this).is(':checked')) {
+                hwVVV.push($(this).val() + '|' + $(this).next().find('b').html());
+            }
+        });
+
         $.ajax({
             url: '/Report/DayTotal/AddDayReportInfo',
             type: 'POST',
             async: false,
-            data: { dayRepot: Result, rand: Math.random() },
+            data: { dayRepot: Result, houseWorkIds: hwVVV.join(','), rand: Math.random() },
             success: function (data) {
-                console.log(data);
+                layer.alert(data.Message);
             },
             error: function (xhr) {
             }

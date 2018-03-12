@@ -1,0 +1,97 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Family</title>
+
+    <script src="~/Scripts/Jquery/jquery.min.js"></script>
+    <script src="~/Content/layer/layer.js"></script>
+    <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <link href="~/Content/other/theme.css" rel="stylesheet" />
+    <link href="~/Content/layer/skin/layer.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <style type="text/css">
+        #sidebar-nav a {
+            text-decoration: none;
+        }
+
+            #sidebar-nav a:hover {
+                text-decoration: none;
+            }
+    </style>
+</head>
+
+<body>
+    <!--顶部-->
+    <div>
+        <div style="padding-left: 30px;  border-bottom-color:aqua; border-bottom:solid">
+            <div style="min-height:80px; background-image: url('../../Images/header_family.png'); background-repeat:no-repeat; "></div>
+        </div>
+    </div>
+
+    <!--导航-->
+    <div class="sidebar-nav">
+        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse" name="日报" toDefault=""><i class="icon-dashboard"></i>日报</a>
+        <ul id="dashboard-menu" class="nav nav-list collapse in">
+            <li><a tohref="/Report/Family/Score" name="家务得分标准"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;&nbsp;家务得分标准</a></li>
+            <li><a tohref="/Report/DayTotal" name="日报统计"><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span>&nbsp;&nbsp;日报统计</a></li>
+            <li><a tohref="/Report/DayDetail" name="日报详细"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;&nbsp;日报详细</a></li>
+        </ul>
+        <a href="/Admin/Login" class="nav-header"><i class="icon-comment"></i>退出登录</a>
+    </div>
+
+
+    <div class="content">
+        <ul class="breadcrumb">
+            <li><a href="/Admin/Family/" id="contentFirst">后台管理</a> <span class="divider"></span></li>
+            <li class="active" id="contentSecond">系统主页</li>
+        </ul>
+        <div class="divContent">
+            <h2 style="margin-left:10px; color:darkgray">该系统主要用户家庭总结，第一个版本功能：家务得分标准，日报统计，日报详细。</h2>
+        </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $(function () {
+        $(".sidebar-nav a").click(function () {
+            var vpath = $(this).attr("tohref");
+            if (vpath == undefined || vpath == "") {
+                if ($(this).attr("class") == 'nav-header') {
+                    $("#contentFirst").html($(this).attr("name"));
+                }
+                return;
+            } else {
+                $("#contentSecond").html($(this).attr("name"));
+            }
+            $("#main").load(vpath, { currentPage: 1, pageSize: 10 }, function () {
+                layer.close(loadindex);
+            });
+            var loadindex;
+            $.ajax({
+                url: vpath,
+                type: 'POST',
+                async: false,
+                data: { currentPage: 0, pageSize: 10 },
+                beforeSend: function (XMLHttpRequest) {
+                    loadindex = layer.load(0, { shade: [0.3, '#fff'] });
+                },
+                success: function (data) {
+                    layer.close(loadindex);
+                    $(".divContent").html(data);
+                },
+                error: function (xhr) {
+                }
+            });
+        });
+    });
+</script>

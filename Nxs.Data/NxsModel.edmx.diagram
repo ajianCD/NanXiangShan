@@ -14,8 +14,8 @@
         <AssociationConnector Association="NxsDbModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="NxsDbModel.AspNetUserRoles" ManuallyRouted="false" />
         <EntityTypeShape EntityType="NxsDbModel.DayReport" Width="1.5" PointX="7.375" PointY="0.75" />
-        <EntityTypeShape EntityType="NxsDbModel.DayReportUser" Width="1.5" PointX="5.375" PointY="6.75" />
         <EntityTypeShape EntityType="NxsDbModel.HouseWorkScore" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="NxsDbModel.DayReportUser" Width="1.5" PointX="3.375" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

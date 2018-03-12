@@ -105,8 +105,9 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="HouseWorkScoreId" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="DayReportId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Times" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="HouseWorkScore">
           <Key>
@@ -322,8 +323,8 @@
             <End Role="AspNetUsers" EntitySet="AspNetUsers" />
           </AssociationSet>
           <EntitySet Name="DayReport" EntityType="NxsDbModel.DayReport" />
-          <EntitySet Name="DayReportUser" EntityType="NxsDbModel.DayReportUser" />
           <EntitySet Name="HouseWorkScore" EntityType="NxsDbModel.HouseWorkScore" />
+          <EntitySet Name="DayReportUser" EntityType="NxsDbModel.DayReportUser" />
         </EntityContainer>
         <EntityType Name="DayReport">
           <Key>
@@ -352,14 +353,6 @@
           <Property Name="WorkRemark" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="CreateTime" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="DayReportUser">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UserId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DayReportId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="HouseWorkScore">
           <Key>
             <PropertyRef Name="Id" />
@@ -369,6 +362,15 @@
           <Property Name="hwScore" Type="Int32" Nullable="false" />
           <Property Name="hwState" Type="Int32" Nullable="false" />
           <Property Name="isIncludeTimes" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="DayReportUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HouseWorkScoreId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DayReportId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Times" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -474,15 +476,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DayReportUser">
-            <EntityTypeMapping TypeName="NxsDbModel.DayReportUser">
-              <MappingFragment StoreEntitySet="DayReportUser">
-                <ScalarProperty Name="DayReportId" ColumnName="DayReportId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="HouseWorkScore">
             <EntityTypeMapping TypeName="NxsDbModel.HouseWorkScore">
               <MappingFragment StoreEntitySet="HouseWorkScore">
@@ -490,6 +483,16 @@
                 <ScalarProperty Name="hwState" ColumnName="hwState" />
                 <ScalarProperty Name="hwScore" ColumnName="hwScore" />
                 <ScalarProperty Name="hwName" ColumnName="hwName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DayReportUser">
+            <EntityTypeMapping TypeName="NxsDbModel.DayReportUser">
+              <MappingFragment StoreEntitySet="DayReportUser">
+                <ScalarProperty Name="Times" ColumnName="Times" />
+                <ScalarProperty Name="DayReportId" ColumnName="DayReportId" />
+                <ScalarProperty Name="HouseWorkScoreId" ColumnName="HouseWorkScoreId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
