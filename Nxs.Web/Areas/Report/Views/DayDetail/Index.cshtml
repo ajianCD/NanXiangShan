@@ -2,184 +2,109 @@
 @{
     Layout = null;
 }
+<style type="text/css">
+    .panel.panel-violet > .panel-heading {
+        color: #FFFFFF;
+        background: #9351ad;
+        border-color: #9351ad !important;
+    }
 
-<div>日报详细</div>
-
-
-<div class="module">
-    <div class="module-head">
-        <h3>日报详细</h3>
+    .panel.panel-violet {
+        border-color: #9351ad;
+    }
+</style>
+<div class="panel panel-violet" style="margin-left:10px;margin-right:70px;">
+    <div class="panel-heading">
+        查询统计
     </div>
-    <div class="module-body">
-
-        <div class="alert">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <strong>Warning!</strong> Something fishy here!
-        </div>
-        <div class="alert alert-error">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <strong>Oh snap!</strong> Whats wrong with you?
-        </div>
-        <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <strong>Well done!</strong> Now you are listening me :)
-        </div>
-
-        <br>
-
-        <form class="form-horizontal row-fluid">
-            <div class="control-group">
-                <label class="control-label" for="basicinput">Basic Input</label>
-                <div class="controls">
-                    <input type="text" id="basicinput" placeholder="Type something here..." class="span8">
-                    <span class="help-inline">Minimum 5 Characters</span>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label" for="basicinput">Disabled Input</label>
-                <div class="controls">
-                    <input type="text" id="basicinput" placeholder="You can't type something here..." class="span8" disabled="">
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label" for="basicinput">Tooltip Input</label>
-                <div class="controls">
-                    <input data-title="A tooltip for the input" type="text" placeholder="Hover to view the tooltip…" data-original-title="" class="span8 tip">
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label" for="basicinput">Prepended Input</label>
-                <div class="controls">
-                    <div class="input-prepend">
-                        <span class="add-on">#</span><input class="span8" type="text" placeholder="prepend">
+    <div class="panel-body pan">
+        <form action="#">
+            <div class="form-body pal">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">开始日期：</label>
+                            <!--指定 date标记-->
+                            <div class='input-group date col-md-7' id='dateStart'>
+                                <input type='text' class="form-control" readonly />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label" for="basicinput">Appended Input</label>
-                <div class="controls">
-                    <div class="input-append">
-                        <input type="text" placeholder="5.000" class="span8"><span class="add-on">$</span>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">结束日期：</label>
+                            <!--指定 date标记-->
+                            <div class='input-group date col-md-7' id='dateEnd'>
+                                <input type='text' class="form-control" readonly />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="control-group">
-                <label class="control-label" for="basicinput">Dropdown Button</label>
-                <div class="controls">
-                    <div class="dropdown">
-                        <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">Dropdown Button <i class="icon-caret-down"></i></a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                            <li><a href="#">First Row</a></li>
-                            <li><a href="#">Second Row</a></li>
-                            <li><a href="#">Third Row</a></li>
-                            <li><a href="#">Fourth Row</a></li>
-                        </ul>
+                    <div class="col-md-2">
+                        <button id="btnSubmit" type="button" class="btn btn-primary" onclick="Search()">
+                            查询
+                        </button>
+                        <button type="button" class="btn btn-danger" onclick="Cancel()">
+                            取消
+                        </button>
                     </div>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label" for="basicinput">Dropdown</label>
-                <div class="controls">
-                    <select tabindex="1" data-placeholder="Select here.." class="span8">
-                        <option value="">Select here..</option>
-                        <option value="Category 1">First Row</option>
-                        <option value="Category 2">Second Row</option>
-                        <option value="Category 3">Third Row</option>
-                        <option value="Category 4">Fourth Row</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label">Radiobuttons</label>
-                <div class="controls">
-                    <label class="radio">
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                        Option one
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                        Option two
-                    </label>
-                    <label class="radio">
-                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-                        Option three
-                    </label>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label">Inline Radiobuttons</label>
-                <div class="controls">
-                    <label class="radio inline">
-                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                        Option one
-                    </label>
-                    <label class="radio inline">
-                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                        Option two
-                    </label>
-                    <label class="radio inline">
-                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-                        Option three
-                    </label>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label">Checkboxes</label>
-                <div class="controls">
-                    <label class="checkbox">
-                        <input type="checkbox" value="">
-                        Option one
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="">
-                        Option two
-                    </label>
-                    <label class="checkbox">
-                        <input type="checkbox" value="">
-                        Option three
-                    </label>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label">Inline Checkboxes</label>
-                <div class="controls">
-                    <label class="checkbox inline">
-                        <input type="checkbox" value="">
-                        Option one
-                    </label>
-                    <label class="checkbox inline">
-                        <input type="checkbox" value="">
-                        Option two
-                    </label>
-                    <label class="checkbox inline">
-                        <input type="checkbox" value="">
-                        Option three
-                    </label>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <label class="control-label" for="basicinput">Textarea</label>
-                <div class="controls">
-                    <textarea class="span8" rows="5"></textarea>
-                </div>
-            </div>
-
-            <div class="control-group">
-                <div class="controls">
-                    <button type="submit" class="btn">Submit Form</button>
                 </div>
             </div>
         </form>
     </div>
 </div>
+
+<div class="container" style="margin-left:10px; margin-top:10px; ">
+    主要内容
+</div>
+
+<link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+<script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.min.js"></script>
+<script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript">
+    $(function () {
+        /**
+        日期控件绑定
+        */
+        $('#dateStart').datetimepicker({
+            language: 'zh-CN',//显示中文
+            format: 'yyyy-mm-dd',//显示格式
+            minView: "month",//设置只显示到月份
+            initialDate: new Date(),
+            autoclose: true,//选中自动关闭
+            todayBtn: true,//显示今日按钮
+        });
+        /**
+        日期控件绑定
+        */
+        $('#dateEnd').datetimepicker({
+            language: 'zh-CN',//显示中文
+            format: 'yyyy-mm-dd',//显示格式
+            minView: "month",//设置只显示到月份
+            initialDate: new Date(),
+            autoclose: true,//选中自动关闭
+            todayBtn: true,//显示今日按钮
+        });
+
+    });
+    function Search()
+    {
+        $.ajax({
+            url: '/Report/DayDetail/List',
+            type: 'GET',
+            async: false,
+            data: {  },
+            success: function (data) {
+                $(".container").html(data);
+            },
+            error: function (xhr) {
+            }
+        });
+    }
+</script>

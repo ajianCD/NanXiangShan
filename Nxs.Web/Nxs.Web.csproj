@@ -183,9 +183,7 @@
     <Content Include="Scripts\BootStrap\bootstrap13.js" />
     <Content Include="Scripts\BootStrap\respond.js" />
     <Content Include="Scripts\BootStrap\respond.min.js" />
-    <Content Include="Scripts\Commen\DoCookie.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Scripts\Commen\DoCookie.js" />
     <Content Include="Config\AppSettings.config" />
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\User\Views\Manage\UserList.cshtml" />
@@ -203,6 +201,7 @@
     <Content Include="Areas\Report\Views\Family\Score.cshtml" />
     <Content Include="Areas\Report\Views\DayTotal\Index.cshtml" />
     <Content Include="Areas\Report\Views\DayDetail\Index.cshtml" />
+    <Content Include="Areas\Report\Views\DayDetail\List.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\Jquery\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Jquery\jquery-1.10.2.js" />
@@ -262,6 +261,7 @@
     <Compile Include="Areas\Report\Controllers\DayDetailController.cs" />
     <Compile Include="Areas\Report\Controllers\DayTotalController.cs" />
     <Compile Include="Areas\Report\Controllers\FamilyController.cs" />
+    <Compile Include="Areas\Report\Models\DayDetailModel.cs" />
     <Compile Include="Areas\Report\ReportAreaRegistration.cs" />
     <Compile Include="Areas\User\Controllers\ManageController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
@@ -309,7 +309,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Report\Models\" />
     <Folder Include="Areas\Report\Views\Shared\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />

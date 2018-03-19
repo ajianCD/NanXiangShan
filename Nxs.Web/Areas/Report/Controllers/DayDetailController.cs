@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nxs.Web.Areas.Report.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,6 +16,11 @@ namespace Nxs.Web.Areas.Report.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult List(DayDetailSearch search)
+        {
+            return PartialView();
         }
     }
 }

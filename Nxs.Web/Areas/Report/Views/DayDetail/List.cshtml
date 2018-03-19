@@ -1,0 +1,40 @@
+﻿@model List<Nxs.Web.Areas.Report.Models.DayDetailModel>
+@{
+    Layout = null;
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>日期</th>
+            <th>工作总结</th>
+            <th>个人收获</th>
+            <th>自身问题</th>
+            <th>挑战</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Anna</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Debbie</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>John</td>
+        </tr>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td></td>
+                    <td>@item.DayReportTime</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
