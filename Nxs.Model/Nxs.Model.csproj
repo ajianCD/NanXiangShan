@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DayReport\DayDetailModel.cs" />
+    <Compile Include="DayReport\DayDetailSearch.cs" />
     <Compile Include="Family\HouseWorkSituationModel.cs" />
     <Compile Include="PageDataModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

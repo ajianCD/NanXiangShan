@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Nxs.Web.Areas.Report.Models
+namespace Nxs.Model.DayReport
 {
+    /// <summary>
+    /// 日报实体
+    /// </summary>
     public class DayDetailModel
     {
         /// <summary>
@@ -36,24 +40,8 @@ namespace Nxs.Web.Areas.Report.Models
         /// 家务得分
         /// </summary>
         public int HouseScores { get; set; }
-
     }
 
-    /// <summary>
-    /// 日报详细查询实体
-    /// </summary>
-    public class DayDetailSearch
-    {
-        /// <summary>
-        /// 开始时间
-        /// </summary>
-        public DateTime? DateStart { get; set; }
-
-        /// <summary>
-        /// 结束时间
-        /// </summary>
-        public DateTime? DateEnd { get; set; }
-    }
 
     
 }

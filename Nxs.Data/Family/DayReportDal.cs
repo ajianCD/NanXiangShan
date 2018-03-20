@@ -1,4 +1,5 @@
-﻿using Nxs.Model.Family;
+﻿using Nxs.Model.DayReport;
+using Nxs.Model.Family;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,7 +39,7 @@ namespace Nxs.Data.Family
                 return _ctx.SaveChanges();
             }
         }
-        
+
         /// <summary>
         /// 获取who 的某天的数据
         /// </summary>
@@ -62,6 +63,33 @@ namespace Nxs.Data.Family
             using (DefaultConnection _ctx = new DefaultConnection())
             {
                 return _ctx.DayReport.Where(item => item.UserId == userId).ToList();
+            }
+        }
+
+
+        /// <summary>
+        /// 根据条件获取报表日志
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public List<DayReport> Get(DayDetailSearch model)
+        {
+            using (DefaultConnection _ctx = new DefaultConnection())
+            {
+                var list = _ctx.DayReport.AsQueryable<DayReport>();
+
+                if (!string.IsNullOrEmpty(model.UserId))
+                    list = list.Where(item => item.UserId == model.UserId);
+
+                DateTime dt = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
+                if (model.DateStart.HasValue)
+                    list = list.Where(item => item.DayReportTime >= dt);
+
+                if (model.DateEnd.HasValue)
+                    list = list.Where(item => item.DayReportTime <= dt);
+
+                list.OrderByDescending(item=>item.DayReportTime);
+                return list.ToList();
             }
         }
     }

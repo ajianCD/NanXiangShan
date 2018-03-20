@@ -261,7 +261,6 @@
     <Compile Include="Areas\Report\Controllers\DayDetailController.cs" />
     <Compile Include="Areas\Report\Controllers\DayTotalController.cs" />
     <Compile Include="Areas\Report\Controllers\FamilyController.cs" />
-    <Compile Include="Areas\Report\Models\DayDetailModel.cs" />
     <Compile Include="Areas\Report\ReportAreaRegistration.cs" />
     <Compile Include="Areas\User\Controllers\ManageController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
@@ -309,6 +308,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Report\Models\" />
     <Folder Include="Areas\Report\Views\Shared\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />

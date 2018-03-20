@@ -1,4 +1,6 @@
-﻿using Nxs.Web.Areas.Report.Models;
+﻿using Business.Family;
+using Microsoft.AspNet.Identity;
+using Nxs.Model.DayReport;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +14,11 @@ namespace Nxs.Web.Areas.Report.Controllers
     /// </summary>
     public class DayDetailController : Controller
     {
+        DayReportBusiness _dayReportBusiness;
+        public DayDetailController()
+        {
+            _dayReportBusiness = new DayReportBusiness();
+        }
         // GET: Report/DayDetail
         public ActionResult Index()
         {
@@ -20,7 +27,18 @@ namespace Nxs.Web.Areas.Report.Controllers
 
         public ActionResult List(DayDetailSearch search)
         {
-            return PartialView();
+            search.UserId = User.Identity.GetUserId();
+
+            List<DayDetailModel> list = new List<DayDetailModel>();
+            try
+            {
+                list = _dayReportBusiness.Get(search);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return PartialView(list);
         }
     }
 }
