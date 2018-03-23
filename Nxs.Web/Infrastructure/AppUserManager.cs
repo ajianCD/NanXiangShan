@@ -36,6 +36,22 @@ namespace Nxs.Web.Infrastructure
             //也就是说UserStore<T>类中的方法（诸如：FindById、FindByNameAsync...）通过EntityFramework检索和持久化UserInfo到数据库中
             AppUserManager manager = new AppUserManager(new UserStore<TUser>(db));
 
+            //设置口令策略
+            manager.PasswordValidator = new CustomPasswordValidator
+            {
+                RequiredLength = 6,
+                RequireNonLetterOrDigit = false,
+                RequireDigit = true,
+                RequireLowercase = true,
+                RequireUppercase = true
+            };
+            //验证用户细节
+            manager.UserValidator = new UserValidator<TUser>(manager)
+            {
+                AllowOnlyAlphanumericUserNames = true,
+                RequireUniqueEmail = true
+            };
+
             return manager;
         }
     }

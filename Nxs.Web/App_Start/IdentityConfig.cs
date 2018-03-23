@@ -24,6 +24,7 @@ namespace Nxs.Web.App_Start
             //3.将返回的实例存储在Owin Context中
             //context.Set<TResult>(instance);
 
+            //向 Owin Context中注册对象实例
             app.CreatePerOwinContext<AppIdentityDbContext>(AppIdentityDbContext.Create);
             app.CreatePerOwinContext<AppUserManager>(AppUserManager.Create);
 
