@@ -1,0 +1,9 @@
+.vs/
+Business/bin
+Business/obj
+Nxs.Data/bin
+Nxs.Data/obj
+Nxs.Model/bin
+Nxs.Model/obj
+Nxs.Web/bin
+Nxs.Web/obj
