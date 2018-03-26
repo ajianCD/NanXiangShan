@@ -7,7 +7,7 @@ $(function () {
     //alert(getCookieValue("LoginWay1Y") + ":" + getCookieValue("LoginWay1X"));
     $("#LoginWay1").css({ "top": getCookieValue("LoginWay1Y") + "px", "left": getCookieValue("LoginWay1X") + "px" });
     $("#LoginWay2").css({ "top": getCookieValue("LoginWay2Y") + "px", "left": getCookieValue("LoginWay2X") + "px" });
-    $("#LoginWay2").hide();
+    $("#LoginWay1").hide();
 });
 //鼠标点击
 function MoveLayer(id, e) {
@@ -72,25 +72,41 @@ function dot() {
 }
 
 function Login() {
-    var vName = $('#Name').val();
-    var vPwd = $('#Password').val();
-    if (vName === '' || vPwd === '') {
-        layer.alert("用户名/密码不能为空！", { icon: 2, title: "温馨提示" });
+    var vName = $('#UserName').val();
+    var vPwd = $('#UserPwd').val();
+    var vCode = $('.Code').val();
+    var tErromsg = $('.err_msg');
+
+    if (vName === '') {
+        tErromsg.find("b").html("账号名不能为空");
+        $(".err_msg").show();
         return;
     }
-    //layer.alert("Name:" + vName + "; Pwd:" + vPwd);
+    $(".err_msg").hide();
+
+    if (vPwd === '') {
+        tErromsg.find("b").html("密码不能为空");
+        $(".err_msg").show();
+        return;
+    }
+    $(".err_msg").hide();
+    if (vCode == '') {
+        tErromsg.find("b").html("验证码不能为空");
+        $(".err_msg").show();
+        return;
+    }
+    $(".err_msg").hide();
+
     $.ajax({
         type: 'post',
-        data: { Name: vName, Password: vPwd },
+        data: { Name: vName, Password: vPwd, Code: vCode },
         url: '/Admin/Login',
         success: function (db) {
             if (db.result) {
                 location.href = "/Admin/Family";
             } else {
-                //alert(db.Message);
-                layer.alert(db.message);
-                //$("#LoginWay1").hide();
-                //$("#LoginWay2").show();
+                tErromsg.find("b").html(db.message);
+                $(".err_msg").show();
             }
         },
         error: function (e) {

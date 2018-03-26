@@ -41,6 +41,10 @@ namespace Nxs.Web.Controllers
                 return Json(new { result = false, message = "数据异常！" });
             }
 
+            if (model.Code.ToLower() != Session["CheckCode"].ToString().ToLower())
+            {
+                return Json(new { result = false, message = "验证码错误！" });
+            }
 
             TUser userInfo = UserManager.Find(model.Name, model.Password);
             if (userInfo == null)

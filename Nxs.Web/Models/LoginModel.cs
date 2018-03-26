@@ -18,6 +18,11 @@ namespace Nxs.Web.Models
         [DataType(DataType.Password)]
         [Display(Name = "密码")]
         public string Password { get; set; }
+
+        /// <summary>
+        /// 验证码
+        /// </summary>
+        public string Code { get; set; }
     }
 
     public class RegisterViewModel
