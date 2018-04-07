@@ -1,4 +1,5 @@
-﻿@model List<Nxs.Model.DayReport.DayDetailModel>
+﻿@using Nxs.Model;
+@model PageDataModel<Nxs.Data.DayReport>
 <table class="table" style="width:1500px">
     <thead>
         <tr>
@@ -12,21 +13,75 @@
         </tr>
     </thead>
     <tbody>
-        @if (Model != null && Model.Count > 0)
+        @if (Model != null && Model.DataList.Count > 0)
         {
             int count = 1;
-            foreach (var item in Model)
+            foreach (var item in Model.DataList)
             {
                 <tr>
                     <td>@(count++)</td>
                     <td>@item.DayReportTime.ToString("yyyy-MM-dd")</td>
-                    <td><pre style="word-break:break-all;word-wrap:break-word;">@item.WorkRemark</pre></td>
-                    <td><pre style="word-break:break-all;word-wrap:break-word;">@item.PersonalResult</pre></td>
-                    <td><pre style="word-break:break-all;word-wrap:break-word;">@item.PersonalQuestion</pre></td>
-                    <td><pre style="word-break:break-all;word-wrap:break-word;">@item.Chanllenge</pre></td>
+                    @if (!string.IsNullOrEmpty(item.WorkRemark) && item.WorkRemark.Trim() != "无")
+                    {
+                        <td><pre style="word-break:break-all;word-wrap:break-word;">@item.WorkRemark</pre></td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    @if (!string.IsNullOrEmpty(item.PersonalResult) && item.PersonalResult.Trim() != "无")
+                    {
+                        <td><pre style="word-break:break-all;word-wrap:break-word;">@item.PersonalResult</pre></td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+
+                    @if (!string.IsNullOrEmpty(item.PersonalQuestion) && item.PersonalQuestion.Trim() != "无")
+                    {
+                        <td><pre style="word-break:break-all;word-wrap:break-word;">@item.PersonalQuestion</pre></td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+
+                    @if (!string.IsNullOrEmpty(item.Chanllenge) && item.Chanllenge.Trim() != "无")
+                    {
+                        <td><pre style="word-break:break-all;word-wrap:break-word;">@item.Chanllenge</pre></td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
                     <td>@item.HouseScores</td>
                 </tr>
             }
         }
     </tbody>
 </table>
+
+<script type="text/javascript">
+    $(function () {
+        layui.use(['laypage', 'layer'], function () {
+            var laypage = layui.laypage
+                , layer = layui.layer;
+
+            laypage.render({
+                elem: 'pager',
+                count: '@Model.RecordCount',
+                limit: '@Model.PageSize',
+                curr:'@Model.PageNum',
+                jump: function (obj, first) {
+                    if (!first)
+                    {
+                        List(obj.curr);
+                    }
+                }
+            });
+        });
+    })
+</script>
+
+

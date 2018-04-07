@@ -8,24 +8,77 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Family</title>
+    <title>家庭总结(Family)</title>
 
     <script src="~/Scripts/Jquery/jquery.min.js"></script>
     <script src="~/Content/layer/layer.js"></script>
     <script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 
-    <link href="~/Content/other/theme.css" rel="stylesheet" />
     <link href="~/Content/layer/skin/layer.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
 
+    <!--时间控件（在layui.js包含）-->
+    <script src="~/Scripts/Layer/laydate/laydate.js"></script>
+
+    <!--layui样式及控件-->
+    <script src="~/Scripts/layui/layui.js"></script>
+    <link href="~/Scripts/layui/css/layui.css" rel="stylesheet" />
+
     <style type="text/css">
-        #sidebar-nav a {
+        .navs {
+            float: left;
+            min-width: 120px;
+            width: 15%;
+        }
+
+        a {
+            padding-left: 10px;
+            text-decoration: none;
+            cursor: pointer
+        }
+
+            a:hover {
+                text-decoration: none;
+                background-color: #e0e0e8
+            }
+
+        .navs-header {
+            border-top: 1px solid #c8c8cb;
+            border-bottom: 1px solid #c8c8cb;
+            border-left: none;
+            color: #333;
+            display: block;
+            font-weight: normal;
+            font-size: 1em;
+            line-height: 2.5em;
+            padding-left: 10px;
             text-decoration: none;
         }
 
-            #sidebar-nav a:hover {
-                text-decoration: none;
+        .navs-list {
+            margin: 0px;
+            list-style: none;
+            padding-left: 0px;
+        }
+
+            .navs-list li a {
+                display: block;
+                color: #444;
+                height: 30px;
+                margin-top: 5px;
+                line-height: 30px;
+                cursor: pointer;
             }
+
+        .content {
+            float: left;
+            min-width: 800px;
+            width: 85%;
+            position: relative;
+            min-height: 800px;
+            background: #fff;
+            border-left: 3px solid #999999;
+        }
     </style>
 </head>
 
@@ -38,22 +91,22 @@
     </div>
 
     <!--导航-->
-    <div class="sidebar-nav">
-        <a href="#dashboard-menu" class="nav-header" data-toggle="collapse" name="日报" toDefault=""><i class="icon-dashboard"></i>日报</a>
-        <ul id="dashboard-menu" class="nav nav-list collapse in">
+    <div class="navs">
+        <a class="navs-header" name="日报"><i class="icon-dashboard"></i>日报</a>
+        <ul class="navs-list">
             <li><a tohref="/Report/Family/Score" name="家务得分标准"><span class="glyphicon glyphicon-star" aria-hidden="true"></span>&nbsp;&nbsp;家务得分标准</a></li>
             <li><a tohref="/Report/DayTotal" name="日报统计"><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span>&nbsp;&nbsp;日报统计</a></li>
             <li><a tohref="/Report/DayDetail" name="日报详细"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;&nbsp;日报详细</a></li>
         </ul>
-        <a href="/Admin/LogOff" class="nav-header"><i class="icon-comment"></i>退出登录</a>
+        <a class="navs-header" href="/Admin/LogOff"><i class="icon-comment"></i>退出登录</a>
     </div>
 
 
     <div class="content">
-        <ul class="breadcrumb">
+        <ul class="breadcrumb" style="border-bottom:1px solid #aaa;">
             <li><a href="/Admin/Family/" id="contentFirst">后台管理</a> <span class="divider"></span></li>
             <li class="active" id="contentSecond">系统主页</li>
-            <span class="navbar-right" style="margin-right:15px;">当前用户：@ViewBag.Name </span>
+            <span style="margin-right:15px;float:right">当前用户：@ViewBag.Name </span>
         </ul>
         <div class="divContent">
             <h2 style="margin-left:10px; color:darkgray">该系统主要用户家庭总结，第一个版本功能：家务得分标准，日报统计，日报详细。</h2>
@@ -64,11 +117,13 @@
 
 <script type="text/javascript">
     $(function () {
-        $(".sidebar-nav a").click(function () {
+
+        $(".navs a").click(function () {
             var vpath = $(this).attr("tohref");
             if (vpath == undefined || vpath == "") {
-                if ($(this).attr("class") == 'nav-header') {
+                if ($(this).attr("class") == 'navs-header') {
                     $("#contentFirst").html($(this).attr("name"));
+                    $("#contentSecond").html("");
                 }
                 return;
             } else {
@@ -94,5 +149,11 @@
                 }
             });
         });
+
+
+        $(".navs-header").click(function () {
+            $(this).next().slideToggle();
+        });
+
     });
 </script>

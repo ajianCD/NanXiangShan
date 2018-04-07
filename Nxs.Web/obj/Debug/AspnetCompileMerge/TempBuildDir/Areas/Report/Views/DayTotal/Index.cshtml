@@ -2,9 +2,7 @@
 @{
     Layout = null;
 }
-<link href="~/Content/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
-<script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.min.js"></script>
-<script src="~/Content/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.zh-CN.js"></script>
+
 <style type="text/css">
     .module {
         box-shadow: 0 0 3px rgba(0,0,0,.1);
@@ -57,11 +55,12 @@
                 <div class="form-group">
                     <label class="col-md-2 control-label">选择日期：</label>
                     <!--指定 date标记-->
-                    <div class='input-group date col-md-5' id='datepicker'>
-                        <input type='text' class="form-control" readonly />
-                        <span class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
+                    <div  class='input-group col-md-2' style="padding-left:5px;">
+                        <input type="text" id="dataInput" class="form-control" placeholder="yyyy-MM-dd" readonly>
+                    </div>
+                   
+                    <div class='input-group date col-md-8' style="display:none">
+                        
                     </div>
                 </div>
             </fieldset>
@@ -165,19 +164,23 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">运动</label>
+                    <label class="col-sm-2 control-label">亲人</label>
                     <div class="col-sm-4">
-                        <textarea id="hMovement" class="form-control" rows="3"></textarea>
+                        <textarea id="hFamilyCommunication" class="form-control" rows="3"></textarea>
                     </div>
+                   
                     <label class="col-sm-2 control-label">拓展</label>
                     <div class="col-sm-4">
                         <textarea id="hExpand" class="form-control" rows="3"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">亲人</label>
+                    <label class="col-sm-2 control-label">运动</label>
                     <div class="col-sm-4">
-                        <textarea id="hFamilyCommunication" class="form-control" rows="3"></textarea>
+                        <div class="input-group">
+                            <input id="hMovement" type="text" class="form-control">
+                            <span class="input-group-addon">小时</span>
+                        </div>
                     </div>
                     <label class="col-sm-2 control-label">家务得分</label>
                     <div class="col-sm-4">
@@ -242,6 +245,11 @@
 <script type="text/javascript">
 
     $(function () {
+
+        laydate.render({
+            elem: '#dataInput' //指定元素
+        });
+
         $('#myModal').modal('hide');
         //加载家务得分选项
         GetScore(1);
@@ -294,17 +302,17 @@
         $("#RstScore").html(vScore - parseInt(score));
 
     }
-    /**
-    日期控件绑定
-    */
-    $('#datepicker').datetimepicker({
-        language: 'zh-CN',//显示中文
-        format: 'yyyy-mm-dd',//显示格式
-        minView: "month",//设置只显示到月份
-        initialDate: new Date(),
-        autoclose: true,//选中自动关闭
-        todayBtn: true,//显示今日按钮
-    });
+    ///**
+    //日期控件绑定
+    //*/
+    //$('#datepicker').datetimepicker({
+    //    language: 'zh-CN',//显示中文
+    //    format: 'yyyy-mm-dd',//显示格式
+    //    minView: "month",//设置只显示到月份
+    //    initialDate: new Date(),
+    //    autoclose: true,//选中自动关闭
+    //    todayBtn: true,//显示今日按钮
+    //});
 
     /**
      * 得分统计
@@ -358,7 +366,7 @@
 
     function Databtn() {
         var Result = {};
-        Result.DayReportTime = $("#datepicker").find("input").val();
+        Result.DayReportTime = $("#dataInput").val();
         if (Result.DayReportTime == "" || Result.DayReportTime == undefined) {
             alert("nope!你还没有选择日报日期");
             return;

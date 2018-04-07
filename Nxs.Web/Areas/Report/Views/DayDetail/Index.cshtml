@@ -13,6 +13,7 @@
         border-color: #9351ad;
     }
 </style>
+
 <div class="panel panel-violet" style="margin-left:10px;margin-right:70px;">
     <div class="panel-heading">
         查询统计
@@ -21,33 +22,14 @@
         <form action="#">
             <div class="form-body pal">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">开始日期：</label>
-                            <!--指定 date标记-->
-                            <div class='input-group date col-md-7' id='dateStart'>
-                                <input type='text' class="form-control" readonly />
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label class="col-md-3 control-label">结束日期：</label>
-                            <!--指定 date标记-->
-                            <div class='input-group date col-md-7' id='dateEnd'>
-                                <input type='text' class="form-control" readonly />
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
+                    <label class="col-md-1 control-label">时间范围：</label>
+                    <div class="col-md-2">
+                        <!--指定 date标记-->
+                        <input type="text" id="dataInput" class="form-control" placeholder="-" readonly>
                     </div>
 
                     <div class="col-md-2">
-                        <button id="btnSubmit" type="button" class="btn btn-primary" onclick="Search()">
+                        <button id="btnSubmit" type="button" class="btn btn-primary">
                             查询
                         </button>
                         <button type="button" class="btn btn-danger" onclick="Cancel()">
@@ -61,47 +43,53 @@
 </div>
 
 <div class="container" style="margin-left:10px; margin-top:10px; ">
-    
-</div>
 
+</div>
+<div style="margin-left:30px;" id="pager"></div>
 <script type="text/javascript">
+    pageSize = 8;
     $(function () {
-        /**
-        日期控件绑定
-        */
-        $('#dateStart').datetimepicker({
-            language: 'zh-CN',//显示中文
-            format: 'yyyy-mm-dd',//显示格式
-            minView: "month",//设置只显示到月份
-            initialDate: new Date(),
-            autoclose: true,//选中自动关闭
-            todayBtn: true,//显示今日按钮
+        //日期范围
+        laydate.render({
+            elem: '#dataInput'
+            , range: true
         });
-        /**
-        日期控件绑定
-        */
-        $('#dateEnd').datetimepicker({
-            language: 'zh-CN',//显示中文
-            format: 'yyyy-mm-dd',//显示格式
-            minView: "month",//设置只显示到月份
-            initialDate: new Date(),
-            autoclose: true,//选中自动关闭
-            todayBtn: true,//显示今日按钮
+
+        $("#btnSubmit").click(function () {
+            List(1);
         });
+
 
     });
-    function Search()
-    {
+
+    /**
+     * 列表加载
+     * curPage 当前页数
+     */
+    function List(curPage) {
+        var dtime = $("#dataInput").val();
+        console.log(dtime);
+        var dStart, dEnd;
+        if (dtime != "" && dtime != undefined) {
+            dStart = dtime.split(" - ")[0];
+            dEnd = dtime.split(" - ")[1];
+        }
+        console.log(dStart + ":" + dEnd);
         $.ajax({
             url: '/Report/DayDetail/List',
-            type: 'GET',
+            type: 'POST',
             async: false,
-            data: {  },
+            data: { DateStart: dStart, DateEnd: dEnd, PageNum: curPage, PageSize: pageSize },
             success: function (data) {
                 $(".container").html(data);
             },
             error: function (xhr) {
             }
         });
+    }
+
+    //取消
+    function Cancel() {
+        $("#dataInput").val("");
     }
 </script>

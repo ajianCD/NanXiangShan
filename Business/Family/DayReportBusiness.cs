@@ -1,5 +1,6 @@
 ﻿using Nxs.Data;
 using Nxs.Data.Family;
+using Nxs.Model;
 using Nxs.Model.DayReport;
 using Nxs.Model.Family;
 using System;
@@ -56,26 +57,14 @@ namespace Business.Family
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public List<DayDetailModel> Get(DayDetailSearch model)
+        public PageDataModel<DayReport> Get(DayDetailSearch model)
         {
             if (model.DateStart.HasValue && model.DateEnd.HasValue
                 && model.DateStart > model.DateEnd)
                 throw new Exception("开始时间不能小于结束时间！");
 
-            List<DayDetailModel> list = new List<DayDetailModel>();
             var source = _dayReportDal.Get(model);
-            foreach (var item in source)
-            {
-                DayDetailModel ddm = new DayDetailModel();
-                ddm.DayReportTime = item.DayReportTime;
-                ddm.Chanllenge = item.Chanllenge;
-                ddm.HouseScores = item.HouseScores;
-                ddm.PersonalQuestion = item.PersonalQuestion;
-                ddm.PersonalResult = item.PersonalResult;
-                ddm.WorkRemark = item.WorkRemark;
-                list.Add(ddm);
-            }
-            return list;
+            return source;
         }
     }
 }

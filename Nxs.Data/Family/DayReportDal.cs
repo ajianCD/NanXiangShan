@@ -1,4 +1,5 @@
-﻿using Nxs.Model.DayReport;
+﻿using Nxs.Model;
+using Nxs.Model.DayReport;
 using Nxs.Model.Family;
 using System;
 using System.Collections.Generic;
@@ -72,7 +73,7 @@ namespace Nxs.Data.Family
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public List<DayReport> Get(DayDetailSearch model)
+        public PageDataModel<DayReport> Get(DayDetailSearch model)
         {
             using (DefaultConnection _ctx = new DefaultConnection())
             {
@@ -83,13 +84,21 @@ namespace Nxs.Data.Family
 
                 DateTime dt = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd"));
                 if (model.DateStart.HasValue)
-                    list = list.Where(item => item.DayReportTime >= dt);
+                    list = list.Where(item => item.DayReportTime >= model.DateStart.Value);
 
                 if (model.DateEnd.HasValue)
-                    list = list.Where(item => item.DayReportTime <= dt);
+                    list = list.Where(item => item.DayReportTime <= model.DateEnd.Value);
 
-                list.OrderByDescending(item=>item.DayReportTime);
-                return list.ToList();
+                list = list.OrderByDescending(item => item.DayReportTime);
+
+                PageDataModel<DayReport> pModel = new PageDataModel<DayReport>();
+
+                pModel.PageNum = model.PageNum;
+                pModel.PageSize = model.PageSize;
+                pModel.RecordCount = list.Count();
+                pModel.DataList = list.Skip(((model.PageNum - 1) * model.PageSize)).Take(model.PageSize).ToList();
+
+                return pModel;
             }
         }
     }

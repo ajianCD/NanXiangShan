@@ -1,5 +1,7 @@
 ﻿using Business.Family;
 using Microsoft.AspNet.Identity;
+using Nxs.Data;
+using Nxs.Model;
 using Nxs.Model.DayReport;
 using System;
 using System.Collections.Generic;
@@ -24,12 +26,17 @@ namespace Nxs.Web.Areas.Report.Controllers
         {
             return View();
         }
-
+        /// <summary>
+        /// 分页查询
+        /// </summary>
+        /// <param name="search"></param>
+        /// <returns></returns>
+        [HttpPost]
         public ActionResult List(DayDetailSearch search)
         {
             search.UserId = User.Identity.GetUserId();
 
-            List<DayDetailModel> list = new List<DayDetailModel>();
+            PageDataModel<DayReport> list = new PageDataModel<DayReport>();
             try
             {
                 list = _dayReportBusiness.Get(search);

@@ -26,5 +26,21 @@ namespace Nxs.Model.DayReport
         /// 当前用户
         /// </summary>
         public string UserId { get; set; }
+
+        /// <summary>
+        /// 当前页
+        /// </summary>
+        public int PageNum { get; set; }
+
+
+        /// <summary>
+        /// 每页显示条数
+        /// </summary>
+        public int PageSize { get; set; }
+
+        /// <summary>
+        /// 总记录数
+        /// </summary>
+        public int RecordCount { get; set; }
     }
 }
