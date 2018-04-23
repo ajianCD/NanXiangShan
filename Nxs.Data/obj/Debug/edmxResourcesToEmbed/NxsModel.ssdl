@@ -17,6 +17,7 @@
     <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
     <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="State" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="AspNetUserClaims">
     <Key>
@@ -44,6 +45,7 @@
     </Key>
     <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
     <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="State" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="AspNetUsers">
     <Key>

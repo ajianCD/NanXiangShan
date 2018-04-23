@@ -14,6 +14,7 @@
     <EntitySetMapping Name="AspNetRoles">
       <EntityTypeMapping TypeName="NxsDbModel.AspNetRoles">
         <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="State" ColumnName="State" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Discriminator" ColumnName="Discriminator" />

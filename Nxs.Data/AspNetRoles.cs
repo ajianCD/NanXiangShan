@@ -22,6 +22,7 @@ namespace Nxs.Data
         public string Id { get; set; }
         public string Name { get; set; }
         public string Discriminator { get; set; }
+        public int State { get; set; }
     
         public virtual ICollection<AspNetUsers> AspNetUsers { get; set; }
     }

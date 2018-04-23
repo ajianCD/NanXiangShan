@@ -16,7 +16,7 @@ namespace Nxs.Data
     public partial class DefaultConnection : DbContext
     {
         public DefaultConnection()
-            : base("name=NxsConnection")
+            : base("name=DefaultConnection")
         {
         }
     

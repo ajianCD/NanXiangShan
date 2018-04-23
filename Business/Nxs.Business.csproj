@@ -43,6 +43,7 @@
     <Compile Include="Family\DayReportBusiness.cs" />
     <Compile Include="Family\HouseWorkBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemBLL\RoleBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nxs.Data\Nxs.Data.csproj">

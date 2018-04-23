@@ -202,6 +202,10 @@
     <Content Include="Areas\Report\Views\DayTotal\Index.cshtml" />
     <Content Include="Areas\Report\Views\DayDetail\Index.cshtml" />
     <Content Include="Areas\Report\Views\DayDetail\List.cshtml" />
+    <Content Include="Areas\System\Views\web.config" />
+    <Content Include="Areas\System\Views\MenuManage\Index.cshtml" />
+    <Content Include="Areas\System\Views\RoleManage\Index.cshtml" />
+    <Content Include="Areas\System\Views\UserManage\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\Jquery\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Jquery\jquery-1.10.2.js" />
@@ -366,6 +370,11 @@
     <Compile Include="Areas\Report\Controllers\DayTotalController.cs" />
     <Compile Include="Areas\Report\Controllers\FamilyController.cs" />
     <Compile Include="Areas\Report\ReportAreaRegistration.cs" />
+    <Compile Include="Areas\System\Controllers\MenuManageController.cs" />
+    <Compile Include="Areas\System\Controllers\RoleManageController.cs" />
+    <Compile Include="Areas\System\Controllers\UserManageController.cs" />
+    <Compile Include="Areas\System\Models\tcRole.cs" />
+    <Compile Include="Areas\System\SystemAreaRegistration.cs" />
     <Compile Include="Areas\User\Controllers\ManageController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AdminController.cs" />
@@ -422,6 +431,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Report\Models\" />
     <Folder Include="Areas\Report\Views\Shared\" />
+    <Folder Include="Areas\System\Views\Shared\" />
     <Folder Include="Areas\User\Models\" />
     <Folder Include="Areas\User\Views\Shared\" />
     <Folder Include="Scripts\Layer\extend\" />
