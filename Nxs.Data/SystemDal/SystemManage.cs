@@ -50,7 +50,7 @@ namespace Nxs.Data.SystemDal
 
                 #region 修改方法1
                 var model = _ctx.AspNetRoles.FirstOrDefault(item => item.Id == Id);
-                model.State = 2;
+                //model.State = 2;
                 #endregion
 
                 #region 修改方法2

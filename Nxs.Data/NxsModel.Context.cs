@@ -16,7 +16,7 @@ namespace Nxs.Data
     public partial class DefaultConnection : DbContext
     {
         public DefaultConnection()
-            : base("name=DefaultConnection")
+            : base("name=NxsConnection")
         {
         }
     
@@ -25,13 +25,12 @@ namespace Nxs.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public DbSet<AspNetRoles> AspNetRoles { get; set; }
         public DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
         public DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public DbSet<AspNetUsers> AspNetUsers { get; set; }
         public DbSet<DayReport> DayReport { get; set; }
-        public DbSet<HouseWorkScore> HouseWorkScore { get; set; }
         public DbSet<DayReportUser> DayReportUser { get; set; }
+        public DbSet<HouseWorkScore> HouseWorkScore { get; set; }
     }
 }

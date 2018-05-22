@@ -61,9 +61,6 @@
     <Compile Include="AspNetUsers.cs">
       <DependentUpon>NxsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="C__MigrationHistory.cs">
-      <DependentUpon>NxsModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="DayReport.cs">
       <DependentUpon>NxsModel.tt</DependentUpon>
     </Compile>

@@ -7,7 +7,7 @@ $(function () {
     //alert(getCookieValue("LoginWay1Y") + ":" + getCookieValue("LoginWay1X"));
     $("#LoginWay1").css({ "top": getCookieValue("LoginWay1Y") + "px", "left": getCookieValue("LoginWay1X") + "px" });
     $("#LoginWay2").css({ "top": getCookieValue("LoginWay2Y") + "px", "left": getCookieValue("LoginWay2X") + "px" });
-    $("#LoginWay1").hide();
+    $("#LoginWay2").hide();
 });
 //鼠标点击
 function MoveLayer(id, e) {
@@ -107,6 +107,41 @@ function Login() {
             } else {
                 tErromsg.find("b").html(db.message);
                 $(".err_msg").show();
+            }
+        },
+        error: function (e) {
+            alert(e);
+        }
+    });
+    return;
+
+}
+
+
+function Login1() {
+    var vName = $('#Name').val();
+    var vPwd = $('#Password').val();
+
+    if (vName === '') {
+        layer.alert("账号名不能为空", { icon: 2 });
+        return;
+    }
+
+
+    if (vPwd === '') {
+        layer.alert("密码不能为空", { icon: 2 });
+        return;
+    }
+
+    $.ajax({
+        type: 'post',
+        data: { Name: vName, Password: vPwd },
+        url: '/Admin/Login',
+        success: function (db) {
+            if (db.result) {
+                location.href = "/Admin/Family";
+            } else {
+                layer.alert(db.message, { icon: 2 });
             }
         },
         error: function (e) {

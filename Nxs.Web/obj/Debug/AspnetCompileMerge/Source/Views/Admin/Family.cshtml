@@ -72,7 +72,6 @@
 
         .content {
             float: left;
-            min-width: 800px;
             width: 85%;
             position: relative;
             min-height: 800px;
@@ -98,6 +97,12 @@
             <li><a tohref="/Report/DayTotal" name="日报统计"><span class="glyphicon glyphicon-text-size" aria-hidden="true"></span>&nbsp;&nbsp;日报统计</a></li>
             <li><a tohref="/Report/DayDetail" name="日报详细"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;&nbsp;日报详细</a></li>
         </ul>
+        <a class="navs-header" name="系统管理"><i class="icon-dashboard"></i>系统管理</a>
+        <ul class="navs-list">
+            <li><a tohref="/System/UserManage" name="用户管理"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;用户管理</a></li>
+            <li><a tohref="/System/RoleManage" name="角色管理"><span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp;&nbsp;角色管理</a></li>
+            <li><a tohref="/System/MenuManage" name="菜单管理"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>&nbsp;&nbsp;菜单管理</a></li>
+        </ul>
         <a class="navs-header" href="/Admin/LogOff"><i class="icon-comment"></i>退出登录</a>
     </div>
 
@@ -118,6 +123,9 @@
 <script type="text/javascript">
     $(function () {
 
+        /*
+        * click 点击事件
+        */
         $(".navs a").click(function () {
             var vpath = $(this).attr("tohref");
             if (vpath == undefined || vpath == "") {
@@ -129,9 +137,6 @@
             } else {
                 $("#contentSecond").html($(this).attr("name"));
             }
-            //$("#main").load(vpath, { currentPage: 1, pageSize: 10 }, function () {
-            //    layer.close(loadindex);
-            //});
             var loadindex;
             $.ajax({
                 url: vpath,
@@ -150,8 +155,11 @@
             });
         });
 
-
+        /*
+        * 下拉收缩
+        */
         $(".navs-header").click(function () {
+            $(".navs-list").slideUp();
             $(this).next().slideToggle();
         });
 
