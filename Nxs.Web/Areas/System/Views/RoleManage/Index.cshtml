@@ -2,88 +2,113 @@
 @{
     Layout = null;
 }
-<link href="~/Scripts/layui/css/layui.css" rel="stylesheet" />
 <style type="text/css">
-    .Menu-container {
+    .Container {
         padding: 0 20px;
     }
 
-    .layui-form-label {
-        width: 100px;
+    .layui-input-block {
+        float: left;
+        margin-left: 0px;
+        width: 480px;
     }
 
-    .layui-form-switch {
-        width: 60px;
+    .form-group {
+        display: inline-block;
+    }
+
+    .layAdd label {
+        float: left;
+        height: 34px;
+        line-height: 34px;
+        width: 80px;
+        margin: 0 10px;
+        text-align: right;
+    }
+
+    .layAdd .form-control {
+        float: left;
+        height: 34px;
+        line-height: 34px;
+        width: 290px;
     }
 </style>
-<div class="Menu-container">
-    <div class="layui-row">
-        <div class="layui-col-xs4 layui-col-sm5 layui-col-md4">
-            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-                <legend>新增/编辑用户角色</legend>
-            </fieldset>
-            <form class="layui-form" action="">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">角色名称</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="RoleName" lay-verify="RoleName" placeholder="请输入角色名称" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item layui-form-text">
-                    <label class="layui-form-label">角色描述</label>
-                    <div class="layui-input-block">
-                        <textarea placeholder="请输入内容" class="layui-textarea" name="RoleDesc"></textarea>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">是否启用</label>
-                    <div class="layui-input-block">
-                        <input type="radio" name="RoleState" value="1" title="启用" checked="">
-                        <input type="radio" name="RoleState" value="0" title="禁用">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                    </div>
-                </div>
-            </form>
+<div class="Container">
+    <div class="layui-form-item">
+        <label for="rolename" class="layui-form-label" style="width:110px;">角色名称</label>
+        <div class="layui-input-block">
+            <input id="rolename" name="rolename" type="text" placeholder="请输入角色名称" class="layui-input">
         </div>
-        <div class="layui-col-xs4 layui-col-sm7 layui-col-md8" style="padding-left:30px; ">
-            <div style="margin-left:15px; padding-left:20px;border-left:3px solid gray;min-height:300px">
-                <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-                    <legend>用户角色数据列表</legend>
-                </fieldset>
-                <div class="demoTable">
-                    角色名称：
-                    <div class="layui-inline">
-                        <input class="layui-input" id="txtSearch" name="txtSearch">
-                    </div>
-                    <button class="layui-btn" data-type="reload">搜索</button>
-                </div>
-                <div class="divContent">
-                    局部数据！
-                </div>
-            </div>
-        </div>
+        <button id="btnsearch" class="layui-btn" style="margin-left:5px;">查询</button>
+        <button class="layui-btn layui-btn-warm" style="margin-left:5px;" onclick="AddPage()">新增</button>
+    </div>
+    <div class="list">
 
     </div>
 </div>
-<script>
-    $(function () {
-        //Demo
-        layui.use('form', function () {
 
-            var form = layui.form;
-            //监听提交
-            form.on('submit(formDemo)', function (data) {
-                console.log(data.field);
-                $.post("/System/RoleManage/Role", { model: data.field }, function (result) {
-                    layer.msg(JSON.stringify(result));
-                });
-                return false;
-            });
+<div class="layAdd" style="display:none">
+    <form id="formAdd">
+        <div class="form-group" style="margin-top:10px;">
+            <label for="Name">角色名称</label>
+            <input type="text" class="form-control" id="Name" name="Name" placeholder="请输入角色名称">
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="exampleInputPassword1">描述</label>
+            <input type="text" class="form-control" id="Discriminator" name="Discriminator" placeholder="角色描述">
+        </div>
+        <br />
+
+        <button type="button" class="btn btn-primary" style="margin-left:100px;" onclick="Add()">新增</button>
+        <button type="reset" class="btn btn-default" onclick="closeLay()">取消</button>
+    </form>
+
+</div>
+<script type="text/javascript">
+    $(function () {
+        Search();
+        $("#btnsearch").click(function () {
+            Search();
         });
     });
+
+    /**
+     * 查询列表
+     * */
+    function Search() {
+        var name = $("#rolename").val();
+        ajaxShow("/System/RoleManage/List", { Name: name }, ".list");
+    }
+
+    function Add() {
+        var data = $("#formAdd").serialize();
+        ajaxJson("/System/RoleManage/Add", data, true, function (rst) {
+            if (rst.result == 1) {
+                Search();
+                closeLay();
+                document.getElementById("formAdd").reset();
+            } else {
+                layer.alert(rst.message);
+            }
+
+
+        });
+    }
+    /**
+     * 新增角色页面
+     * */
+    function AddPage() {
+        layer.open({
+            type: 1,
+            title: '新增角色',
+            skin: 'layui-layer-rim',
+            area: ['420px', '240px'],
+            content: $('.layAdd')
+        });
+    }
+
+    function closeLay() {
+        layer.closeAll();
+    }
 </script>

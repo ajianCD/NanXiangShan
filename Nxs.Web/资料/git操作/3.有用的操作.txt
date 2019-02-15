@@ -15,3 +15,8 @@
 8.git reset --hard HASH #返回到某个节点，不保留修改。
 
 9.git reset --soft HASH #返回到某个节点。保留修改
+
+10.删除目录work
+# git rm work -r -f 
+# git commit -m "delete work"
+# git push

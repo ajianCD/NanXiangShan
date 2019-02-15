@@ -8,3 +8,8 @@ E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Model\bin\Debug\Nxs.Model.pdb
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Model\obj\Debug\Nxs.Model.csproj.CoreCompileInputs.cache
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Model\obj\Debug\Nxs.Model.dll
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Model\obj\Debug\Nxs.Model.pdb
+E:\个人项目\NanXiangShan\Nxs.Model\bin\Debug\Nxs.Model.dll
+E:\个人项目\NanXiangShan\Nxs.Model\bin\Debug\Nxs.Model.pdb
+E:\个人项目\NanXiangShan\Nxs.Model\obj\Debug\Nxs.Model.csproj.CoreCompileInputs.cache
+E:\个人项目\NanXiangShan\Nxs.Model\obj\Debug\Nxs.Model.dll
+E:\个人项目\NanXiangShan\Nxs.Model\obj\Debug\Nxs.Model.pdb

@@ -24,3 +24,17 @@ E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Debug\Nxs.Model.pdb
 E:\VS-Project\NanXiangShan\NanXiangShan\Business\bin\Debug\EntityFramework.xml
 E:\VS-Project\NanXiangShan\NanXiangShan\Business\obj\Debug\Business.dll
 E:\VS-Project\NanXiangShan\NanXiangShan\Business\obj\Debug\Business.pdb
+E:\个人项目\NanXiangShan\Business\bin\Debug\Business.dll
+E:\个人项目\NanXiangShan\Business\bin\Debug\Business.pdb
+E:\个人项目\NanXiangShan\Business\bin\Debug\Nxs.Data.dll
+E:\个人项目\NanXiangShan\Business\bin\Debug\Nxs.Model.dll
+E:\个人项目\NanXiangShan\Business\bin\Debug\EntityFramework.dll
+E:\个人项目\NanXiangShan\Business\bin\Debug\Nxs.Data.pdb
+E:\个人项目\NanXiangShan\Business\bin\Debug\Nxs.Data.dll.config
+E:\个人项目\NanXiangShan\Business\bin\Debug\Nxs.Model.pdb
+E:\个人项目\NanXiangShan\Business\bin\Debug\EntityFramework.xml
+E:\个人项目\NanXiangShan\Business\obj\Debug\Nxs.Business.csprojAssemblyReference.cache
+E:\个人项目\NanXiangShan\Business\obj\Debug\Nxs.Business.csproj.CoreCompileInputs.cache
+E:\个人项目\NanXiangShan\Business\obj\Debug\Nxs.Business.csproj.CopyComplete
+E:\个人项目\NanXiangShan\Business\obj\Debug\Business.dll
+E:\个人项目\NanXiangShan\Business\obj\Debug\Business.pdb

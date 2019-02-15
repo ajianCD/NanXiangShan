@@ -2,85 +2,19 @@
 @{
     Layout = null;
 }
-<link href="~/Scripts/layui/css/layui.css" rel="stylesheet" />
 <style type="text/css">
-    .Menu-container {
+    .Container {
         padding: 0 20px;
     }
-
-    .layui-form-label {
-        width: 100px;
-    }
-
-    .layui-form-switch {
-        width: 60px;
-    }
 </style>
-<div class="Menu-container">
-    <div class="layui-row">
-        <div class="layui-col-xs4 layui-col-sm5 layui-col-md4">
-            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-                <legend>新增/编辑用户角色</legend>
-            </fieldset>
-            <form class="layui-form" action="">
-                <div class="layui-form-item">
-                    <label class="layui-form-label">角色名称</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="name" lay-verify="name" placeholder="请输入角色名称" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item layui-form-text">
-                    <label class="layui-form-label">角色描述</label>
-                    <div class="layui-input-block">
-                        <textarea placeholder="请输入内容" class="layui-textarea" name="describe"></textarea>
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <label class="layui-form-label">是否启用</label>
-                    <div class="layui-input-block">
-                        <input type="radio" name="used" value="1" title="启用" checked="">
-                        <input type="radio" name="used" value="0" title="禁用">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                    </div>
-                </div>
-            </form>
+<div class="Container">
+    <form>
+        <div>
+            <label for="rolename">角色名称</label>
+            <input id="rolename" name="rolename" type="text" placeholder="请输入角色名称" class="layui-input">
         </div>
-        <div class="layui-col-xs4 layui-col-sm7 layui-col-md8" style="padding-left:30px; ">
-            <div style="margin-left:15px; padding-left:20px;border-left:3px solid gray;min-height:300px">
-                <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-                    <legend>用户角色数据列表</legend>
-                </fieldset>
-                <div class="demoTable">
-                    角色名称：
-                    <div class="layui-inline">
-                        <input class="layui-input" id="txtSearch" name="txtSearch">
-                    </div>
-                    <button class="layui-btn" data-type="reload">搜索</button>
-                </div>
-                <div class="divContent">
-                    局部数据！
-                </div>
-            </div>
-        </div>
-
-    </div>
+    </form>
 </div>
 <script>
-    $(function () {
-        //Demo
-        layui.use('form', function () {
-            var form = layui.form;
 
-            //监听提交
-            form.on('submit(formDemo)', function (data) {
-                layer.msg(JSON.stringify(data.field));
-                return false;
-            });
-        });
-    });
 </script>

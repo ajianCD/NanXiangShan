@@ -24,3 +24,17 @@ E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Data\bin\Debug\EntityFramework.xml
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Data\bin\Debug\EntityFramework.SqlServer.xml
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.dll
 E:\VS-Project\NanXiangShan\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.pdb
+E:\个人项目\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Data.dll.config
+E:\个人项目\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Data.dll
+E:\个人项目\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Data.pdb
+E:\个人项目\NanXiangShan\Nxs.Data\bin\Debug\EntityFramework.dll
+E:\个人项目\NanXiangShan\Nxs.Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\个人项目\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Model.dll
+E:\个人项目\NanXiangShan\Nxs.Data\bin\Debug\Nxs.Model.pdb
+E:\个人项目\NanXiangShan\Nxs.Data\bin\Debug\EntityFramework.xml
+E:\个人项目\NanXiangShan\Nxs.Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\个人项目\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.csprojAssemblyReference.cache
+E:\个人项目\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.csproj.CoreCompileInputs.cache
+E:\个人项目\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.csproj.CopyComplete
+E:\个人项目\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.dll
+E:\个人项目\NanXiangShan\Nxs.Data\obj\Debug\Nxs.Data.pdb

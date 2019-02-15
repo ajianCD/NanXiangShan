@@ -17,7 +17,10 @@ namespace Nxs.Data.SystemDal
         {
             using (DefaultConnection _ctx = new DefaultConnection())
             {
-                var list = _ctx.AspNetRoles.AsQueryable<AspNetRoles>();
+                var list = _ctx.AspNetRoles.Where(item => item.State != 0);
+
+                if (!string.IsNullOrEmpty(model.Name))
+                    list = list.Where(item => item.Name.Contains(model.Name));
 
                 return list.ToList();
             }
@@ -33,31 +36,29 @@ namespace Nxs.Data.SystemDal
             using (DefaultConnection _ctx = new DefaultConnection())
             {
                 model.Id = Guid.NewGuid().ToString();
+                model.State = 1;
                 _ctx.AspNetRoles.Add(model);
                 return _ctx.SaveChanges();
             }
         }
 
+
         /// <summary>
-        /// 删除
+        /// 设置角色状态
         /// </summary>
         /// <param name="Id"></param>
+        /// <param name="state"> 0 删除 1 可使用 2 禁用</param>
         /// <returns></returns>
-        public int Delect(string Id)
+        public int SetState(string Id, int state)
         {
             using (DefaultConnection _ctx = new DefaultConnection())
             {
-
-                #region 修改方法1
                 var model = _ctx.AspNetRoles.FirstOrDefault(item => item.Id == Id);
-                //model.State = 2;
-                #endregion
+                if (model == null)
+                    return -1;
 
-                #region 修改方法2
-                //model.State = 2;
-                //_ctx.Entry<AspNetRoles>(model).State = System.Data.Entity.EntityState.Modified;
-                #endregion
-
+                model.State = state;
+                _ctx.Entry<AspNetRoles>(model).State = System.Data.Entity.EntityState.Modified;
                 return _ctx.SaveChanges();
 
             }
@@ -72,7 +73,15 @@ namespace Nxs.Data.SystemDal
         {
             using (DefaultConnection _ctx = new DefaultConnection())
             {
-                _ctx.Entry<AspNetRoles>(model).State = System.Data.Entity.EntityState.Modified;
+                if (string.IsNullOrEmpty(model.Id))
+                    return -1;
+                var datamodel = _ctx.AspNetRoles.Where(item => item.Id == model.Id).FirstOrDefault();
+                if (datamodel == null)
+                    return -1;
+                datamodel.Name = model.Name;
+                datamodel.Discriminator = model.Discriminator;
+                datamodel.State = model.State;
+                _ctx.Entry<AspNetRoles>(datamodel).State = System.Data.Entity.EntityState.Modified;
                 return _ctx.SaveChanges();
             }
         }

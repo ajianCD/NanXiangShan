@@ -183,6 +183,7 @@
     <Content Include="Scripts\BootStrap\bootstrap13.js" />
     <Content Include="Scripts\BootStrap\respond.js" />
     <Content Include="Scripts\BootStrap\respond.min.js" />
+    <Content Include="Scripts\Commen\Default.js" />
     <Content Include="Scripts\Commen\DoCookie.js" />
     <Content Include="Config\AppSettings.config" />
     <Content Include="Areas\User\Views\web.config" />
@@ -206,6 +207,7 @@
     <Content Include="Areas\System\Views\MenuManage\Index.cshtml" />
     <Content Include="Areas\System\Views\RoleManage\Index.cshtml" />
     <Content Include="Areas\System\Views\UserManage\Index.cshtml" />
+    <Content Include="Areas\System\Views\RoleManage\List.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\Jquery\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Jquery\jquery-1.10.2.js" />

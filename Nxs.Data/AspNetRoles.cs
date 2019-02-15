@@ -22,6 +22,9 @@ namespace Nxs.Data
         public string Id { get; set; }
         public string Name { get; set; }
         public string Discriminator { get; set; }
+        /// <summary>
+        /// 0 删除 1 可使用 2 禁用
+        /// </summary>
         public int State { get; set; }
     
         public virtual ICollection<AspNetUsers> AspNetUsers { get; set; }
